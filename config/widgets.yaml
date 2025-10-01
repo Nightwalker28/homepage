@@ -1,0 +1,35 @@
+- logo:
+    icon: /mnt/media/images/profile.png
+
+- greeting:
+    text_size: xl
+    text: Welcome Nightwalker28
+
+- resources:
+    cpu: true
+    memory: true
+    disk:
+      - /
+      - /mnt/media
+
+- search:
+    id: search
+    provider: google
+
+- datetime:
+    locale: en
+    text_size: sm
+    format:
+      dateStyle: short
+      timeStyle: short
+      hour12: true
+      timeZone: 'Asia/Colombo'
+
+- openweathermap:
+    #label: Colombo, LK
+    units: metric
+    provider: openweathermap
+    apiKey: 'f24d8f411c62ddd73b36b3d6d88a2a45'
+    latitude: 6.9271
+    longitude: 79.8612
+    cache: 10

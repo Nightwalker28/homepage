@@ -1,0 +1,70 @@
+- Networking & Security:
+    - AdGuard:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
+        href: http://nas:8002
+        widget:
+          type: adguard
+          url: http://nas:8002
+          username: nightwalker28
+          password: Maadmanco3
+        description: "Network-wide Ad-blocker"
+        server: docker
+        container: adguard
+    - Nginx Proxy Manager:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
+        href: http://nas:8003
+        widget:
+          type: npm
+          url: http://nas:8003
+          username: maadmustafa28@gmail.com
+          password: Maadmanco3
+        description: "Simple Reverse Proxy Manager"
+        server: docker
+        container: npm
+    - Portainer (HTTP):
+        icon: si-portainer-#13BEF9
+        href: http://nas:8000
+        widget:
+          type: portainer
+          url: http://nas:8000
+          env: 3
+          key: "ptr_fsCvSKiw7W7jxuZv4vQ7lrRW6cRo+l5kPkj/t6PKjn0="
+          fields: ["running", "stopped", "total"]
+        description: "Docker Management made Simple"
+        server: docker
+        container: portainer
+- System & Monitoring:
+    - Homepage:
+        icon: si-homepage-#009BD5
+        href: http://nas:8008
+    - Glances:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/glances.webp
+        href: http://nas:61208
+
+- Media Servers:
+    - Jellyfin:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
+        href: http://nas:8050
+    - Immich:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/immich.webp
+        href: http://nas:8051
+    - Nextcloud:
+        icon: si-nextcloud-#0082C9
+        href: http://nas:8052
+
+- Download & Automation:
+    - qBittorrent:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
+        href: http://nas:8005
+    - Jackett:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jackett-light.webp
+        href: http://nas:8006
+    - Radarr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
+        href: http://nas:8053
+    - Sonarr:
+        icon: si-sonarr-#2596BE
+        href: http://nas:8054
+    - TV Time Tracker:
+        icon: si-tvtime-#FFD400
+        href: http://nas:8007

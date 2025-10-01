@@ -1,0 +1,21 @@
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    ports:
+      - "8008:3000"
+    volumes:
+      - ./config:/app/config
+      - /mnt/media:/mnt/media:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: "nas:8008"
+    networks:
+      - shared_net
+    restart: unless-stopped
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
+
+networks:
+  shared_net:
+    external: true
