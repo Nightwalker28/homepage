@@ -8,6 +8,7 @@ services:
       - ./config:/app/config
       - /mnt/media:/mnt/media:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/icons:/app/public/icons
     environment:
       HOMEPAGE_ALLOWED_HOSTS: "nas:8008"
     networks:

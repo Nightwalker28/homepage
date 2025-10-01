@@ -33,38 +33,133 @@
         description: "Docker Management made Simple"
         server: docker
         container: portainer
+
 - System & Monitoring:
-    - Homepage:
-        icon: si-homepage-#009BD5
-        href: http://nas:8008
-    - Glances:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/glances.webp
+    - CPU Usage:
         href: http://nas:61208
+        widget:
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: cpu
+            refreshInterval: 5000
+            pointsLimit: 30
+    - RAM Usage:
+        href: http://nas:61208
+        widget:
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: memory
+            refreshInterval: 5000
+            pointsLimit: 30
+    - Disk Usage:
+        href: http://nas:61208
+        widget:
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: disk:sda
+            refreshInterval: 5000
+            pointsLimit: 30
 
 - Media Servers:
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
         href: http://nas:8050
+        widget:
+            type: jellyfin
+            url: http://nas:8050
+            key: "f3de71e660d84575bc6902a64a801eca"
+            enableBlocks: true
+            fields: ["movies", "series", "episodes"]
+            enableNowPlaying: false
+            enableUser: false
+            enableMediaControl: false
+            showEpisodeNumber: true
+            expandOneStreamToTwoRows: false
+        description: "Media Server"
+        server: docker
+        container: jellyfin
     - Immich:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/immich.webp
         href: http://nas:8051
+        widget:
+            type: immich
+            url: http://nas:8051
+            key: "FRccidWoJ95btuL8b7C2j5GbbdX7q8QuoefO2tXYY"
+            version: 2
+        description: "Photo & Video Server"
+        server: docker
+        container: immich-server
     - Nextcloud:
         icon: si-nextcloud-#0082C9
         href: http://nas:8052
+        widget:
+            type: nextcloud
+            url: http://nas:8052
+            key: "nextcloud_server_stats@1"
+            fields: ["activeusers", "numfiles", "numshares"]
+        description: "Photo & Video Server"
+        server: docker
+        container: nextcloud
 
 - Download & Automation:
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
         href: http://nas:8005
+        widget:
+            type: qbittorrent
+            url: http://nas:8005
+            username: nightwalker28
+            password: 'Maadmanco3'
+            enableLeechProgress: true 
+        description: "Torrent Client"
+        server: docker
+        container: qbittorrent
     - Jackett:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jackett-light.webp
         href: http://nas:8006
+        widget:
+            type: jackett
+            url: http://nas:8006
+            password: "Maadmanco3"
+        description: "Torrent Indexer"
+        server: docker
+        container: jackett
     - Radarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
         href: http://nas:8053
+        widget:
+            type: radarr
+            url: http://nas:8053
+            key: "18edab22eacf4305800b9ef5bc7cc511"
+        description: "Movie Automation"
+        server: docker
+        container: radarr
     - Sonarr:
         icon: si-sonarr-#2596BE
         href: http://nas:8054
+        widget:
+            type: sonarr
+            url: http://nas:8054
+            key: "ecca5fba7b784037a064261cc1e97e30"
+        description: "TV Show Automation"
+        server: docker
+        container: sonarr
     - TV Time Tracker:
         icon: si-tvtime-#FFD400
         href: http://nas:8007
+        description: "Track your TV Shows"
+        server: docker
+        container: tvtime-plugin
+    - Watchtower:
+        icon: si-watchtower-#3CA4FF
+        href: https://containrrr.dev/watchtower/
+        widget:
+            type: watchtower
+            url: http://nas:8004
+            key: metrics
+        description: "Automated Docker Container Updates"
+        server: docker
+        container: watchtower

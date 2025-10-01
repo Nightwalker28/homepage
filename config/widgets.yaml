@@ -1,17 +1,21 @@
 - logo:
-    icon: /mnt/media/images/profile.png
+    icon: /icons/profile.png
+    id: logo
 
 - greeting:
     text_size: xl
     text: Welcome Nightwalker28
 
 - resources:
-    cpu: true
-    memory: true
+    label: System
     disk:
       - /
-      - /mnt/media
 
+- resources:
+    label: Media
+    disk:
+      - /mnt/media
+      
 - search:
     id: search
     provider: google
