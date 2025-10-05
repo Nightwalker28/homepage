@@ -214,7 +214,7 @@
       href: https://techmeedigital.com/wp-admin/
   - block app:
       id: service-bookmark
-      icon: si-wordpress-#21759B
+      icon: /icons/block-app.png
       href: https://block.acumendashboards.com/
   - HostGator:
       id: service-bookmark
@@ -222,11 +222,11 @@
       href: https://portal.hostgator.com/
   - spamhous:
       id: service-bookmark
-      icon: /icons/spamhuas.png
+      icon: /icons/spamhaus.png
       href: https://check.spamhaus.org/
   - SEZ:
       id: service-bookmark
-      icon: 
+      icon: /icons/shabab.png
       href: https://zadmin.colomboshabab.com/active-safars
 
   # 🎓 Education & University

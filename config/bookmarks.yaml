@@ -25,17 +25,18 @@
      - icon: si-valorant-#FF4654
        href: https://valorantesports.com/en-US/leagues/champions,game_changers_championship,vct_americas,vct_emea,vct_masters,vct_pacific
   - AnimePahe:
-     - icon: https://raw.githubusercontent.com/Albert2438/Animepahe/65401296644fdea04e081acc7fbce13aca41bc6f/animepahe%20logo.svg
+     - icon: /icons/animepahe.png
        href: https://animepahe.com/
+       id: animepahe
   - TodayTv:
-     - icon: https://www.todaytvseries1.com/images/positions/logo-summer1.svg
+     - icon: /icons/todaytv.png
        href: https://www.todaytvseries1.com/
   - 1337x:
      - icon: /icons/1337x.png
        href: https://x1337x.cc/
   - YTS:
-     - icon: https://img.informer.com/icons/png/128/7499/7499565.png
+     - icon: /icons/yts.png
        href: https://yts.mx/
   - Pahe.in:
-     - icon: https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6c51b7ce-37c6-46e8-8a60-f77282a66f9c/dg7jae0-8d446b6c-6d82-4a9f-b334-aa66974f45e4.png/v1/fill/w_625,h_319/pahe_logo_by_effuuuuuuuu_dg7jae0-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzE5IiwicGF0aCI6IlwvZlwvNmM1MWI3Y2UtMzdjNi00NmU4LThhNjAtZjc3MjgyYTY2ZjljXC9kZzdqYWUwLThkNDQ2YjZjLTZkODItNGE5Zi1iMzM0LWFhNjY5NzRmNDVlNC5wbmciLCJ3aWR0aCI6Ijw9NjI1In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.WNIY5T22lCXifwkg3rvpkz4pnBOlxabmHiQxDmcRNaY
+     - icon: /icons/paheink.png
        href: https://pahe.ink/

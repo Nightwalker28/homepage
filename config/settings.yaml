@@ -3,6 +3,8 @@ favicon: /icons/profile.png
 disableCollapse: false
 background:
   image: /icons/wallpaper.png
+  blur: sm
+  brightness: 51
 cardBlur: 4xl
 theme: dark
 headerStyle: clean
