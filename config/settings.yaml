@@ -1,7 +1,47 @@
-title: 'NAS Dashboard'
-description: 'This is my nas dashboard'
+title: Nightwalker's Homepage
+favicon: /icons/profile.png
+disableCollapse: false
+background:
+  image: /icons/wallpaper.png
+cardBlur: 4xl
 theme: dark
-color: slate
-fullWidth: true
-showStats: false
+headerStyle: clean
+iconStyle: theme
+statusStyle: dot
+quicklaunch:
+  searchDescriptions: true
+hideVersion: true
 hideErrors: true
+fiveColumns: true
+useEqualHeights: true
+preloadAllWidgets: true
+layout:
+  Home:
+    header: false
+    tab: Home
+    style: row
+    columns: 4
+  Work:
+    tab: Home
+    iconsOnly: true
+  Personal:
+    tab: Home
+    iconsOnly: true
+  Entertainment:
+    tab: Home
+    iconsOnly: true
+  Media:
+    header: false
+    tab: Media
+    style: row
+    columns: 4
+  Infrastructure:
+    header: false
+    tab: Infrastructure
+    style: row
+    columns: 4
+  Bookmarks:
+    header: false
+    tab: Bookmarks
+    style: row
+    columns: 4

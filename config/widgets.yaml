@@ -1,6 +1,5 @@
 - logo:
     icon: /icons/profile.png
-    id: logo
 
 - greeting:
     text_size: xl

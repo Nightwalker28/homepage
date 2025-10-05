@@ -1,18 +1,41 @@
----
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/bookmarks
+- Work:
+  - ChatGPT:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/chatgpt-light.webp
+       href: https://chatgpt.com/g/g-p-6870023d1d4881919de4a3e1e3d1fced-maad/project
+  - Work gmail:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
+       href: https://mail.google.com/mail/u/1/#inbox
+  - GitHub:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github-light.webp
+       href: https://github.com/Nightwalker28
+  - Cloudflare:
+     - icon: si-cloudflare-#F38020
+       href: https://dash.cloudflare.com/b33b89b005a08218713c0d91257dbdc4/home/domains
+  - GoDaddy:
+     - icon: si-godaddy-#1BDBDB
+       href: https://dcc.godaddy.com/control/dnsmanagement
 
-- Developer:
-    - Github:
-        - abbr: GH
-          href: https://github.com/
-
-- Social:
-    - Reddit:
-        - abbr: RE
-          href: https://reddit.com/
+- Personal:
+  - Personal gmail:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
+       href: https://mail.google.com/mail/u/0/#inbox
 
 - Entertainment:
-    - YouTube:
-        - abbr: YT
-          href: https://youtube.com/
+  - Valorant:
+     - icon: si-valorant-#FF4654
+       href: https://valorantesports.com/en-US/leagues/champions,game_changers_championship,vct_americas,vct_emea,vct_masters,vct_pacific
+  - AnimePahe:
+     - icon: https://raw.githubusercontent.com/Albert2438/Animepahe/65401296644fdea04e081acc7fbce13aca41bc6f/animepahe%20logo.svg
+       href: https://animepahe.com/
+  - TodayTv:
+     - icon: https://www.todaytvseries1.com/images/positions/logo-summer1.svg
+       href: https://www.todaytvseries1.com/
+  - 1337x:
+     - icon: /icons/1337x.png
+       href: https://x1337x.cc/
+  - YTS:
+     - icon: https://img.informer.com/icons/png/128/7499/7499565.png
+       href: https://yts.mx/
+  - Pahe.in:
+     - icon: https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6c51b7ce-37c6-46e8-8a60-f77282a66f9c/dg7jae0-8d446b6c-6d82-4a9f-b334-aa66974f45e4.png/v1/fill/w_625,h_319/pahe_logo_by_effuuuuuuuu_dg7jae0-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzE5IiwicGF0aCI6IlwvZlwvNmM1MWI3Y2UtMzdjNi00NmU4LThhNjAtZjc3MjgyYTY2ZjljXC9kZzdqYWUwLThkNDQ2YjZjLTZkODItNGE5Zi1iMzM0LWFhNjY5NzRmNDVlNC5wbmciLCJ3aWR0aCI6Ijw9NjI1In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.WNIY5T22lCXifwkg3rvpkz4pnBOlxabmHiQxDmcRNaY
+       href: https://pahe.ink/

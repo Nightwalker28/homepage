@@ -1,15 +1,12 @@
-/* Hide the search bar but keep functionality */
-#headlessui-combobox-input-\:R3epit6\: {
-  display: none !important;
-}
-#headlessui-listbox-button-\:R6tepit6\: {
+/* Hide the search bar */
+.information-widget-search {
   display: none !important;
 }
 
 /* Resize the logo */
-#widgets-wrap > div.flex.flex-col.max-w\:full.sm\:basis-auto.self-center.grow-0.flex-wrap.information-widget-logo.resolved.widget-container > div  {
-  width: 40px;
-  height: 40px;
+.information-widget-logo {
+  width: 42px;
+  height: 42px;
 }
 
 /* Center the widgets header */
@@ -46,4 +43,113 @@
   margin: 0 auto;
 }
 
+:root {
+--card-bg: rgba(15, 23, 42, 0.9); /* deep navy */
+--card-border: 2px solid #1e3a8a; /* dark blue border */
+--card-border-hover: #2563eb; /* bright blue hover */
+--card-border-focus: #3b82f6; /* lighter focus blue */
+--font-family-base: "Inter", "SF Pro Display", sans-serif;
+--base-font-size: 14px;
+--text-color: #f1f5f9; /* soft white */
+--accent-color: #38bdf8; /* cyan accent */
+--border-radius: 1rem;
+}
 
+
+body {
+background: #0f172a; /* solid dark navy */
+color: var(--text-color);
+font-family: var(--font-family-base);
+font-size: var(--base-font-size);
+}
+
+
+.service-card {
+background: var(--card-bg);
+border: var(--card-border);
+border-radius: var(--border-radius);
+box-shadow: 0 0 15px rgba(37, 99, 235, 0.15);
+transition: all 0.3s ease-in-out;
+}
+
+
+.service-card:hover {
+border-color: var(--card-border-hover);
+box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+
+.tabcontent.active {
+margin-top: 10px;
+display: block;
+opacity: 1;
+visibility: visible;
+margin-bottom: 15px;
+}
+
+
+#myTab {
+margin-bottom: 0;
+font: 16px/2 var(--font-family-base);
+display: flex;
+gap: 15px;
+}
+
+
+[id$="-tab"].active {
+background-color: #1e293b;
+border-color: var(--card-border-focus);
+color: var(--accent-color);
+}
+
+
+.widget-container, .information-widget-resource {
+font-family: var(--font-family-base);
+font-weight: 500;
+}
+
+
+.datetime, .weather {
+color: var(--accent-color);
+}
+
+
+
+/* === Bookmark Icon Styling === */
+  .bookmark-icon {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(56, 189, 248, 0.1);
+  transition: all 0.3s ease;
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transform: translateY(-2px);
+}
+
+/* Slight glow on hover */
+  .bookmark-icon:hover {
+  border-color: var(--card-border-hover);
+}
+
+#service-bookmark {
+  padding: 0px;
+  max-width: 100%;
+}
+
+#service-bookmark .service-name , #service-bookmark-hnb .service-name {
+  text-align: center;
+  padding: 12px;
+}
+
+#service-bookmark-hnb  .service-icon {
+  zoom: 1.5;
+  object-fit: contain;
+}

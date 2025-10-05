@@ -1,69 +1,6 @@
-- Networking & Security:
-    - AdGuard:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
-        href: http://nas:8002
-        widget:
-          type: adguard
-          url: http://nas:8002
-          username: nightwalker28
-          password: Maadmanco3
-        description: "Network-wide Ad-blocker"
-        server: docker
-        container: adguard
-    - Nginx Proxy Manager:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
-        href: http://nas:8003
-        widget:
-          type: npm
-          url: http://nas:8003
-          username: maadmustafa28@gmail.com
-          password: Maadmanco3
-        description: "Simple Reverse Proxy Manager"
-        server: docker
-        container: npm
-    - Portainer (HTTP):
-        icon: si-portainer-#13BEF9
-        href: http://nas:8000
-        widget:
-          type: portainer
-          url: http://nas:8000
-          env: 3
-          key: "ptr_fsCvSKiw7W7jxuZv4vQ7lrRW6cRo+l5kPkj/t6PKjn0="
-          fields: ["running", "stopped", "total"]
-        description: "Docker Management made Simple"
-        server: docker
-        container: portainer
+# - Home:
 
-- System & Monitoring:
-    - CPU Usage:
-        href: http://nas:61208
-        widget:
-            type: glances
-            url: http://nas:61208
-            version: 4
-            metric: cpu
-            refreshInterval: 5000
-            pointsLimit: 30
-    - RAM Usage:
-        href: http://nas:61208
-        widget:
-            type: glances
-            url: http://nas:61208
-            version: 4
-            metric: memory
-            refreshInterval: 5000
-            pointsLimit: 30
-    - Disk Usage:
-        href: http://nas:61208
-        widget:
-            type: glances
-            url: http://nas:61208
-            version: 4
-            metric: disk:sda
-            refreshInterval: 5000
-            pointsLimit: 30
-
-- Media Servers:
+- Media:
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
         href: http://nas:8050
@@ -103,8 +40,26 @@
         description: "Photo & Video Server"
         server: docker
         container: nextcloud
-
-- Download & Automation:
+    - Sonarr:
+        icon: si-sonarr-#2596BE
+        href: http://nas:8054
+        widget:
+            type: sonarr
+            url: http://nas:8054
+            key: "ecca5fba7b784037a064261cc1e97e30"
+        description: "TV Show Automation"
+        server: docker
+        container: sonarr
+    - Radarr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
+        href: http://nas:8053
+        widget:
+            type: radarr
+            url: http://nas:8053
+            key: "18edab22eacf4305800b9ef5bc7cc511"
+        description: "Movie Automation"
+        server: docker
+        container: radarr
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
         href: http://nas:8005
@@ -127,35 +82,69 @@
         description: "Torrent Indexer"
         server: docker
         container: jackett
-    - Radarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
-        href: http://nas:8053
+
+- Infrastructure:
+    - CPU Usage:
+        href: http://nas:61208
         widget:
-            type: radarr
-            url: http://nas:8053
-            key: "18edab22eacf4305800b9ef5bc7cc511"
-        description: "Movie Automation"
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: cpu
+            refreshInterval: 5000
+            pointsLimit: 30
+        description: "System Monitor"
         server: docker
-        container: radarr
-    - Sonarr:
-        icon: si-sonarr-#2596BE
-        href: http://nas:8054
+        container: glances
+    - RAM Usage:
+        href: http://nas:61208
         widget:
-            type: sonarr
-            url: http://nas:8054
-            key: "ecca5fba7b784037a064261cc1e97e30"
-        description: "TV Show Automation"
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: memory
+            refreshInterval: 5000
+            pointsLimit: 30
+        description: "System Monitor"
         server: docker
-        container: sonarr
-    - TV Time Tracker:
-        icon: si-tvtime-#FFD400
-        href: http://nas:8007
-        description: "Track your TV Shows"
+        container: glances
+    - Network:
+        href: http://nas:8009
+        widget:
+            type: speedtest
+            url: http://nas:8009
+            version: 2
+            key: 1a1hSLoHhg5YhqUyQ1Wxr3zaiuqcCx0g0dnzAmKw4cbc052a
+            bitratePrecision: 3
+        description: "Internet Speed Test"
         server: docker
-        container: tvtime-plugin
+        container: speedtest
+    - Disk Usage:
+        href: http://nas:61208
+        widget:
+            type: glances
+            url: http://nas:61208
+            version: 4
+            metric: disk:sda
+            refreshInterval: 5000
+            pointsLimit: 30
+        description: "System Monitor"
+        server: docker
+        container: glances
+    - Portainer:
+        icon: si-portainer-#13BEF9
+        href: http://nas:8000
+        widget:
+          type: portainer
+          url: http://nas:8000
+          env: 3
+          key: "ptr_fsCvSKiw7W7jxuZv4vQ7lrRW6cRo+l5kPkj/t6PKjn0="
+          fields: ["running", "stopped", "total"]
+        description: "Docker Management made Simple"
+        server: docker
+        container: portainer 
     - Watchtower:
         icon: si-watchtower-#3CA4FF
-        href: https://containrrr.dev/watchtower/
         widget:
             type: watchtower
             url: http://nas:8004
@@ -163,3 +152,176 @@
         description: "Automated Docker Container Updates"
         server: docker
         container: watchtower
+    - AdGuard:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
+        href: http://nas:8002
+        widget:
+          type: adguard
+          url: http://nas:8002
+          username: nightwalker28
+          password: Maadmanco3
+        description: "Network-wide Ad-blocker"
+        server: docker
+        container: adguard
+    - Nginx Proxy Manager:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
+        href: http://nas:8003
+        widget:
+          type: npm
+          url: http://nas:8003
+          username: maadmustafa28@gmail.com
+          password: Maadmanco3
+        description: "Simple Reverse Proxy Manager"
+        server: docker
+        container: npm
+    - Postgres:
+        icon: si-postgresql-#336791
+        description: "Database Server"
+        server: docker
+        container: postgres
+    - Redis:
+        icon: si-redis-#DC382D
+        description: "In-memory Data Structure Store"
+        server: docker
+        container: redis
+
+#------------------------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------------------------------#
+# BOOKMARKS
+
+- Bookmarks:
+  # 🧑‍💻 Work & Company
+  - Acumen — WordPress:
+      id: service-bookmark
+      icon: si-wordpress-#21759B
+      href: https://acumenintelligence.com/wp-admin/
+  - Acumen Content Hub — WordPress:
+      id: service-bookmark
+      icon: si-wordpress-#21759B
+      href: https://acumenintelligence.com/content-hub/wp-admin/
+  - CRM ARM:
+      id: service-bookmark
+      icon: 
+      href: https://arm.acumenintelligence.com/
+  - amatech — WordPress:
+      id: service-bookmark
+      icon: si-wordpress-#21759B
+      href: https://amatechmedia.com/wp-admin/
+  - Techmeedigital — WordPress:
+      id: service-bookmark
+      icon: si-wordpress-#21759B
+      href: https://techmeedigital.com/wp-admin/
+  - block app:
+      id: service-bookmark
+      icon: si-wordpress-#21759B
+      href: https://block.acumendashboards.com/
+  - HostGator:
+      id: service-bookmark
+      icon: /icons/hostgator.svg
+      href: https://portal.hostgator.com/
+  - spamhous:
+      id: service-bookmark
+      icon: /icons/spamhuas.png
+      href: https://check.spamhaus.org/
+  - SEZ:
+      id: service-bookmark
+      icon: 
+      href: https://zadmin.colomboshabab.com/active-safars
+
+  # 🎓 Education & University
+  - Blackboard:
+      id: service-bookmark
+      icon: /icons/westminster.jpeg
+      href: https://learning.westminster.ac.uk/webapps/login/?action=default_login
+  - Microsoft Office 365:
+      id: service-bookmark
+      icon: si-microsoftoffice-#D83B01
+      href: https://m365.cloud.microsoft/apps/?auth=2&home=1
+  - IIT gmail:
+      id: service-bookmark
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
+      href: https://mail.google.com/mail/u/2/#inbox
+  - Seylan IIT Payment:
+      id: service-bookmark
+      icon: /icons/saylan.png
+      href: https://mpg.seylan.lk/iit
+  - Student Hub — Westminster:
+      id: service-bookmark
+      icon: /icons/westminster.jpeg
+      href: https://srs21live.wmin.ac.uk/urd/sits.urd/run/SIW_LGN
+  - Google Scholar:
+      id: service-bookmark
+      icon: si-googlescholar-#4285F4
+      href: https://scholar.google.com/
+  - QuillBot AI:
+      id: service-bookmark
+      icon: /icons/quillbot.png
+      href: https://quillbot.com/
+
+  # 📊 Documents & Sheets
+  - Research Project Gantt:
+      id: service-bookmark
+      icon: si-googlesheets-#34A853
+      href: https://docs.google.com/spreadsheets/d/1acQXqg5TFSK1XniKRGh6UXxAC7P4eZox70FUF3FHfdk/edit?gid=1514721757#gid=1514721757
+  - Office IPs — Google Sheets:
+      id: service-bookmark
+      icon: si-googlesheets-#34A853
+      href: https://docs.google.com/spreadsheets/d/1J_yXfznPmG27Ipkh3KCBKZrsZ_GL9HvmSx1FBA2rwwA/edit?gid=0#gid=0
+  - Monthly Budget:
+      id: service-bookmark
+      icon: si-googlesheets-#34A853
+      href: https://docs.google.com/spreadsheets/d/1IZwmlD31QR0VUAy9rCE3Y8mslqZQCaCpj7MKAyGUo1U/edit?gid=1342924886#gid=1342924886
+  - Home Network — Google Sheets:
+      id: service-bookmark
+      icon: si-googlesheets-#34A853
+      href: https://docs.google.com/spreadsheets/d/1x_BMKJxhXd31oJYFurZLSDY_JBiYU-NBMYpZKCWc0_E/edit?gid=0#gid=0
+
+  # ✅ Tasks & Productivity
+  - Google Tasks (Personal):
+      id: service-bookmark
+      icon: si-googletasks-#4285F4
+      href: https://calendar.google.com/calendar/u/0/r/tasks
+  - Google Tasks (Work):
+      id: service-bookmark
+      icon: si-googletasks-#4285F4
+      href: https://calendar.google.com/calendar/u/1/r/tasks?pli=1
+
+  # 💰 Banking
+  - HNB Online Banking:
+      id: service-bookmark-hnb
+      icon: /icons/hnb.png
+      href: https://onlinebanking.hnb.lk/
+
+  # 🌐 Personal & Developer
+  - Maad Mustafa — DEV:
+      id: service-bookmark
+      icon: si-devdotto
+      href: https://dev.to/nightwalker28
+  - LinkedIn:
+      id: service-bookmark
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/linkedin.webp
+      href: https://www.linkedin.com/feed/
+
+  # 🎮 Entertainment
+  - Epic Games Store:
+      id: service-bookmark
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/epic-games-light.webp
+      href: https://www.epicgames.com/store/en-US/
+  - Twitch:
+      id: service-bookmark
+      icon: si-twitch-#9146FF
+      href: https://www.twitch.tv/
+  - TV Time:
+      id: service-bookmark
+      icon: si-tvtime-#FFD400
+      href: https://www.tvtime.com/en
+  - YouTube:
+      id: service-bookmark
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/youtube.webp
+      href: https://www.youtube.com/
+  - The Pirate Bay:
+      id: service-bookmark
+      icon: /icons/thepiratebay.svg
+      href: https://thepiratebay.org/index.html
+      
