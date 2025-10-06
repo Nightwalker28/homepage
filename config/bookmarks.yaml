@@ -1,42 +1,42 @@
 - Work:
   - ChatGPT:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/chatgpt-light.webp
-       href: "${BOOKMARK_WORK_CHATGPT_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_WORK_CHATGPT_URL}}"
   - Work gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
-       href: "${BOOKMARK_WORK_GMAIL_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_WORK_GMAIL_URL}}"
   - GitHub:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github-light.webp
-       href: "${BOOKMARK_GITHUB_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_GITHUB_URL}}"
   - Cloudflare:
      - icon: si-cloudflare-#F38020
-       href: "${BOOKMARK_CLOUDFLARE_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_CLOUDFLARE_URL}}"
   - GoDaddy:
      - icon: si-godaddy-#1BDBDB
-       href: "${BOOKMARK_GODADDY_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_GODADDY_URL}}"
 
 - Personal:
   - Personal gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
-       href: "${BOOKMARK_PERSONAL_GMAIL_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_PERSONAL_GMAIL_URL}}"
 
 - Entertainment:
   - Valorant:
      - icon: si-valorant-#FF4654
-       href: "${BOOKMARK_VALORANT_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_VALORANT_URL}}"
   - AnimePahe:
      - icon: /icons/animepahe.webp
-       href: "${BOOKMARK_ANIMEPAHE_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_ANIMEPAHE_URL}}"
        id: animepahe
   - TodayTv:
      - icon: /icons/todaytv.webp
-       href: "${BOOKMARK_TODAYTV_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_TODAYTV_URL}}"
   - 1337x:
      - icon: /icons/1337x.webp
-       href: "${BOOKMARK_1337X_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_1337X_URL}}"
   - YTS:
      - icon: /icons/yts.webp
-       href: "${BOOKMARK_YTS_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_YTS_URL}}"
   - Pahe.in:
      - icon: /icons/paheink.webp
-       href: "${BOOKMARK_PAHE_URL}"
+       href: "{{HOMEPAGE_VAR_BOOKMARK_PAHE_URL}}"

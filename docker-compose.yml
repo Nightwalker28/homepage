@@ -11,6 +11,8 @@ services:
       - ./config/icons:/app/public/icons
     environment:
       HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
+    env_file:
+      - ./config/.env
     networks:
       - shared_net
     restart: unless-stopped

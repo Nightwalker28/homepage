@@ -3,11 +3,11 @@
 - Media:
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
-        href: "${JELLYFIN_URL}"
+        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
         widget:
             type: jellyfin
-            url: "${JELLYFIN_URL}"
-            key: "${JELLYFIN_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+            key: "{{HOMEPAGE_VAR_JELLYFIN_WIDGET_KEY}}"
             enableBlocks: true
             fields: ["movies", "series", "episodes"]
             enableNowPlaying: false
@@ -20,75 +20,75 @@
         container: jellyfin
     - Immich:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/immich.webp
-        href: "${IMMICH_URL}"
+        href: "{{HOMEPAGE_VAR_IMMICH_URL}}"
         widget:
             type: immich
-            url: "${IMMICH_URL}"
-            key: "${IMMICH_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_IMMICH_URL}}"
+            key: "{{HOMEPAGE_VAR_IMMICH_WIDGET_KEY}}"
             version: 2
         description: "Photo & Video Server"
         server: docker
         container: immich-server
     - Nextcloud:
         icon: si-nextcloud-#0082C9
-        href: "${NEXTCLOUD_URL}"
+        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
         widget:
             type: nextcloud
-            url: "${NEXTCLOUD_URL}"
-            key: "${NEXTCLOUD_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+            key: "{{HOMEPAGE_VAR_NEXTCLOUD_WIDGET_KEY}}"
             fields: ["activeusers", "numfiles", "numshares"]
         description: "Photo & Video Server"
         server: docker
         container: nextcloud
     - Sonarr:
         icon: si-sonarr-#2596BE
-        href: "${SONARR_URL}"
+        href: "{{HOMEPAGE_VAR_SONARR_URL}}"
         widget:
             type: sonarr
-            url: "${SONARR_URL}"
-            key: "${SONARR_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_SONARR_URL}}"
+            key: "{{HOMEPAGE_VAR_SONARR_WIDGET_KEY}}"
         description: "TV Show Automation"
         server: docker
         container: sonarr
     - Radarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
-        href: "${RADARR_URL}"
+        href: "{{HOMEPAGE_VAR_RADARR_URL}}"
         widget:
             type: radarr
-            url: "${RADARR_URL}"
-            key: "${RADARR_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_RADARR_URL}}"
+            key: "{{HOMEPAGE_VAR_RADARR_WIDGET_KEY}}"
         description: "Movie Automation"
         server: docker
         container: radarr
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
-        href: "${QBITTORRENT_URL}"
+        href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
         widget:
             type: qbittorrent
-            url: "${QBITTORRENT_URL}"
-            username: "${QBITTORRENT_USERNAME}"
-            password: "${QBITTORRENT_PASSWORD}"
+            url: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+            username: "{{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}"
             enableLeechProgress: true 
         description: "Torrent Client"
         server: docker
         container: qbittorrent
     - Jackett:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jackett-light.webp
-        href: "${JACKETT_URL}"
+        href: "{{HOMEPAGE_VAR_JACKETT_URL}}"
         widget:
             type: jackett
-            url: "${JACKETT_URL}"
-            password: "${JACKETT_PASSWORD}"
+            url: "{{HOMEPAGE_VAR_JACKETT_URL}}"
+            password: "{{HOMEPAGE_VAR_JACKETT_PASSWORD}}"
         description: "Torrent Indexer"
         server: docker
         container: jackett
 
 - Infrastructure:
     - CPU Usage:
-        href: "${GLANCES_URL}"
+        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
         widget:
             type: glances
-            url: "${GLANCES_URL}"
+            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
             version: 4
             metric: cpu
             refreshInterval: 5000
@@ -97,10 +97,10 @@
         server: docker
         container: glances
     - RAM Usage:
-        href: "${GLANCES_URL}"
+        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
         widget:
             type: glances
-            url: "${GLANCES_URL}"
+            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
             version: 4
             metric: memory
             refreshInterval: 5000
@@ -109,21 +109,21 @@
         server: docker
         container: glances
     - Network:
-        href: "${SPEEDTEST_URL}"
+        href: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
         widget:
             type: speedtest
-            url: "${SPEEDTEST_URL}"
+            url: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
             version: 2
-            key: "${SPEEDTEST_WIDGET_KEY}"
+            key: "{{HOMEPAGE_VAR_SPEEDTEST_WIDGET_KEY}}"
             bitratePrecision: 3
         description: "Internet Speed Test"
         server: docker
         container: speedtest
     - Disk Usage:
-        href: "${GLANCES_URL}"
+        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
         widget:
             type: glances
-            url: "${GLANCES_URL}"
+            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
             version: 4
             metric: disk:sda
             refreshInterval: 5000
@@ -133,12 +133,12 @@
         container: glances
     - Portainer:
         icon: si-portainer-#13BEF9
-        href: "${PORTAINER_URL}"
+        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
         widget:
           type: portainer
-          url: "${PORTAINER_URL}"
+          url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
           env: 3
-          key: "${PORTAINER_WIDGET_KEY}"
+          key: "{{HOMEPAGE_VAR_PORTAINER_WIDGET_KEY}}"
           fields: ["running", "stopped", "total"]
         description: "Docker Management made Simple"
         server: docker
@@ -147,30 +147,30 @@
         icon: si-watchtower-#3CA4FF
         widget:
             type: watchtower
-            url: "${WATCHTOWER_URL}"
-            key: "${WATCHTOWER_WIDGET_KEY}"
+            url: "{{HOMEPAGE_VAR_WATCHTOWER_URL}}"
+            key: "{{HOMEPAGE_VAR_WATCHTOWER_WIDGET_KEY}}"
         description: "Automated Docker Container Updates"
         server: docker
         container: watchtower
     - AdGuard:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
-        href: "${ADGUARD_URL}"
+        href: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
         widget:
           type: adguard
-          url: "${ADGUARD_URL}"
-          username: "${ADGUARD_USERNAME}"
-          password: "${ADGUARD_PASSWORD}"
+          url: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
+          username: "{{HOMEPAGE_VAR_ADGUARD_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
         description: "Network-wide Ad-blocker"
         server: docker
         container: adguard
     - Nginx Proxy Manager:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
-        href: "${NPM_URL}"
+        href: "{{HOMEPAGE_VAR_NPM_URL}}"
         widget:
           type: npm
-          url: "${NPM_URL}"
-          username: "${NPM_USERNAME}"
-          password: "${NPM_PASSWORD}"
+          url: "{{HOMEPAGE_VAR_NPM_URL}}"
+          username: "{{HOMEPAGE_VAR_NPM_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_NPM_PASSWORD}}"
         description: "Simple Reverse Proxy Manager"
         server: docker
         container: npm
@@ -195,133 +195,133 @@
   - Acumen — WordPress:
       id: service-bookmark
       icon: si-wordpress-#21759B
-      href: "${BOOKMARK_ACUMEN_WORDPRESS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_ACUMEN_WORDPRESS_URL}}"
   - Acumen Content Hub — WordPress:
       id: service-bookmark
       icon: si-wordpress-#21759B
-      href: "${BOOKMARK_ACUMEN_CONTENT_WORDPRESS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_ACUMEN_CONTENT_WORDPRESS_URL}}"
   - CRM ARM:
       id: service-bookmark
       icon: 
-      href: "${BOOKMARK_CRM_ARM_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_CRM_ARM_URL}}"
   - amatech — WordPress:
       id: service-bookmark
       icon: si-wordpress-#21759B
-      href: "${BOOKMARK_AMATECH_WORDPRESS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_AMATECH_WORDPRESS_URL}}"
   - Techmeedigital — WordPress:
       id: service-bookmark
       icon: si-wordpress-#21759B
-      href: "${BOOKMARK_TECHMEEDIGITAL_WORDPRESS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_TECHMEEDIGITAL_WORDPRESS_URL}}"
   - block app:
       id: service-bookmark
       icon: /icons/block-app.webp
-      href: "${BOOKMARK_BLOCK_APP_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_BLOCK_APP_URL}}"
   - HostGator:
       id: service-bookmark
       icon: /icons/hostgator.webp
-      href: "${BOOKMARK_HOSTGATOR_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_HOSTGATOR_URL}}"
   - spamhous:
       id: service-bookmark
       icon: /icons/spamhaus.webp
-      href: "${BOOKMARK_SPAMHAUS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_SPAMHAUS_URL}}"
   - SEZ:
       id: service-bookmark
       icon: /icons/shabab.webp
-      href: "${BOOKMARK_SEZ_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_SEZ_URL}}"
 
   # 🎓 Education & University
   - Blackboard:
       id: service-bookmark
       icon: /icons/westminster.webp
-      href: "${BOOKMARK_BLACKBOARD_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_BLACKBOARD_URL}}"
   - Microsoft Office 365:
       id: service-bookmark
       icon: si-microsoftoffice-#D83B01
-      href: "${BOOKMARK_OFFICE365_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_OFFICE365_URL}}"
   - IIT gmail:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
-      href: "${BOOKMARK_IIT_GMAIL_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_IIT_GMAIL_URL}}"
   - Seylan IIT Payment:
       id: service-bookmark
       icon: /icons/saylan.webp
-      href: "${BOOKMARK_SEYLAN_PAYMENT_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_SEYLAN_PAYMENT_URL}}"
   - Student Hub — Westminster:
       id: service-bookmark
       icon: /icons/westminster.webp
-      href: "${BOOKMARK_STUDENT_HUB_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_STUDENT_HUB_URL}}"
   - Google Scholar:
       id: service-bookmark
       icon: si-googlescholar-#4285F4
-      href: "${BOOKMARK_GOOGLE_SCHOLAR_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_SCHOLAR_URL}}"
   - QuillBot AI:
       id: service-bookmark
       icon: /icons/quillbot.webp
-      href: "${BOOKMARK_QUILLBOT_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_QUILLBOT_URL}}"
 
   # 📊 Documents & Sheets
   - Research Project Gantt:
       id: service-bookmark
       icon: si-googlesheets-#34A853
-      href: "${BOOKMARK_RESEARCH_GANTT_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_RESEARCH_GANTT_URL}}"
   - Office IPs — Google Sheets:
       id: service-bookmark
       icon: si-googlesheets-#34A853
-      href: "${BOOKMARK_OFFICE_IPS_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_OFFICE_IPS_URL}}"
   - Monthly Budget:
       id: service-bookmark
       icon: si-googlesheets-#34A853
-      href: "${BOOKMARK_MONTHLY_BUDGET_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_MONTHLY_BUDGET_URL}}"
   - Home Network — Google Sheets:
       id: service-bookmark
       icon: si-googlesheets-#34A853
-      href: "${BOOKMARK_HOME_NETWORK_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_HOME_NETWORK_URL}}"
 
   # ✅ Tasks & Productivity
   - Google Tasks (Personal):
       id: service-bookmark
       icon: si-googletasks-#4285F4
-      href: "${BOOKMARK_GOOGLE_TASKS_PERSONAL_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_TASKS_PERSONAL_URL}}"
   - Google Tasks (Work):
       id: service-bookmark
       icon: si-googletasks-#4285F4
-      href: "${BOOKMARK_GOOGLE_TASKS_WORK_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_TASKS_WORK_URL}}"
 
   # 💰 Banking
   - HNB Online Banking:
       id: service-bookmark-hnb
       icon: /icons/hnb.webp
-      href: "${BOOKMARK_HNB_ONLINE_BANKING_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_HNB_ONLINE_BANKING_URL}}"
 
   # 🌐 Personal & Developer
   - Maad Mustafa — DEV:
       id: service-bookmark
       icon: si-devdotto
-      href: "${BOOKMARK_DEV_PROFILE_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_DEV_PROFILE_URL}}"
   - LinkedIn:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/linkedin.webp
-      href: "${BOOKMARK_LINKEDIN_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_LINKEDIN_URL}}"
 
   # 🎮 Entertainment
   - Epic Games Store:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/epic-games-light.webp
-      href: "${BOOKMARK_EPIC_GAMES_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_EPIC_GAMES_URL}}"
   - Twitch:
       id: service-bookmark
       icon: si-twitch-#9146FF
-      href: "${BOOKMARK_TWITCH_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_TWITCH_URL}}"
   - TV Time:
       id: service-bookmark
       icon: si-tvtime-#FFD400
-      href: "${BOOKMARK_TV_TIME_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_TV_TIME_URL}}"
   - YouTube:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/youtube.webp
-      href: "${BOOKMARK_YOUTUBE_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_YOUTUBE_URL}}"
   - The Pirate Bay:
       id: service-bookmark
       icon: /icons/thepiratebay.webp
-      href: "${BOOKMARK_PIRATE_BAY_URL}"
+      href: "{{HOMEPAGE_VAR_BOOKMARK_PIRATE_BAY_URL}}"
       

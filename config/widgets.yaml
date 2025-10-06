@@ -3,7 +3,7 @@
 
 - greeting:
     text_size: xl
-    text: "${HOMEPAGE_GREETING_TEXT}"
+    text: {{HOMEPAGE_VAR_GREETING_TEXT}}
 
 - resources:
     label: System
@@ -26,13 +26,13 @@
       dateStyle: short
       timeStyle: short
       hour12: true
-      timeZone: "${HOMEPAGE_TIMEZONE}"
+      timeZone: "{{HOMEPAGE_VAR_TIMEZONE}}"
 
 - openweathermap:
     #label: Colombo, LK
     units: metric
     provider: openweathermap
-    apiKey: "${HOMEPAGE_OPENWEATHER_API_KEY}"
-    latitude: ${HOMEPAGE_OPENWEATHER_LATITUDE}
-    longitude: ${HOMEPAGE_OPENWEATHER_LONGITUDE}
+    apiKey: "{{HOMEPAGE_VAR_OPENWEATHER_API_KEY}}"
+    latitude: {{HOMEPAGE_VAR_OPENWEATHER_LATITUDE}}
+    longitude: {{HOMEPAGE_VAR_OPENWEATHER_LONGITUDE}}
     cache: 10
