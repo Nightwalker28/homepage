@@ -3,14 +3,14 @@ services:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
     ports:
-      - "8008:3000"
+      - "${HOMEPAGE_HTTP_PORTS}"
     volumes:
       - ./config:/app/config
       - /mnt/media:/mnt/media:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./config/icons:/app/public/icons
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: "nas:8008"
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
     networks:
       - shared_net
     restart: unless-stopped
