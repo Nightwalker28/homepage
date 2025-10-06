@@ -1,42 +1,42 @@
 - Work:
   - ChatGPT:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/chatgpt-light.webp
-       href: https://chatgpt.com/g/g-p-6870023d1d4881919de4a3e1e3d1fced-maad/project
+       href: "${BOOKMARK_WORK_CHATGPT_URL}"
   - Work gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
-       href: https://mail.google.com/mail/u/1/#inbox
+       href: "${BOOKMARK_WORK_GMAIL_URL}"
   - GitHub:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github-light.webp
-       href: https://github.com/Nightwalker28
+       href: "${BOOKMARK_GITHUB_URL}"
   - Cloudflare:
      - icon: si-cloudflare-#F38020
-       href: https://dash.cloudflare.com/b33b89b005a08218713c0d91257dbdc4/home/domains
+       href: "${BOOKMARK_CLOUDFLARE_URL}"
   - GoDaddy:
      - icon: si-godaddy-#1BDBDB
-       href: https://dcc.godaddy.com/control/dnsmanagement
+       href: "${BOOKMARK_GODADDY_URL}"
 
 - Personal:
   - Personal gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
-       href: https://mail.google.com/mail/u/0/#inbox
+       href: "${BOOKMARK_PERSONAL_GMAIL_URL}"
 
 - Entertainment:
   - Valorant:
      - icon: si-valorant-#FF4654
-       href: https://valorantesports.com/en-US/leagues/champions,game_changers_championship,vct_americas,vct_emea,vct_masters,vct_pacific
+       href: "${BOOKMARK_VALORANT_URL}"
   - AnimePahe:
-     - icon: /icons/animepahe.png
-       href: https://animepahe.com/
+     - icon: /icons/animepahe.webp
+       href: "${BOOKMARK_ANIMEPAHE_URL}"
        id: animepahe
   - TodayTv:
-     - icon: /icons/todaytv.png
-       href: https://www.todaytvseries1.com/
+     - icon: /icons/todaytv.webp
+       href: "${BOOKMARK_TODAYTV_URL}"
   - 1337x:
-     - icon: /icons/1337x.png
-       href: https://x1337x.cc/
+     - icon: /icons/1337x.webp
+       href: "${BOOKMARK_1337X_URL}"
   - YTS:
-     - icon: /icons/yts.png
-       href: https://yts.mx/
+     - icon: /icons/yts.webp
+       href: "${BOOKMARK_YTS_URL}"
   - Pahe.in:
-     - icon: /icons/paheink.png
-       href: https://pahe.ink/
+     - icon: /icons/paheink.webp
+       href: "${BOOKMARK_PAHE_URL}"

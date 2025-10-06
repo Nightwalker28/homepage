@@ -1,8 +1,8 @@
 title: Nightwalker's Homepage
-favicon: /icons/profile.png
+favicon: /icons/profile.webp
 disableCollapse: false
 background:
-  image: /icons/wallpaper.png
+  image: /icons/wallpaper.webp
   blur: sm
   brightness: 51
 cardBlur: 4xl
