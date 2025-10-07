@@ -18,6 +18,7 @@
 - search:
     id: search
     provider: google
+    focus: true
 
 - datetime:
     locale: en

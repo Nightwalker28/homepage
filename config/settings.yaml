@@ -18,11 +18,6 @@ fiveColumns: true
 useEqualHeights: true
 preloadAllWidgets: true
 layout:
-  Home:
-    header: false
-    tab: Home
-    style: row
-    columns: 4
   Work:
     tab: Home
     iconsOnly: true
@@ -32,6 +27,11 @@ layout:
   Entertainment:
     tab: Home
     iconsOnly: true
+  Home:
+    header: false
+    tab: Home
+    style: row
+    columns: 4
   Media:
     header: false
     tab: Media

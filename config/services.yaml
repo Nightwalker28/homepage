@@ -1,4 +1,18 @@
-# - Home:
+- Home:
+    - Calendar:
+        widget:
+            type: calendar
+            view: monthly
+            maxEvents: 10
+            showTime: true
+            timezone: "{{HOMEPAGE_VAR_TIMEZONE}}"
+            integrations:
+              - type: ical
+                url: "{{HOMEPAGE_VAR_ICAL_URL}}"
+                name: "Events"
+                color:
+                params:
+                    showName: false
 
 - Media:
     - Jellyfin:
