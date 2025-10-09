@@ -35,6 +35,7 @@ node_modules/
 *.pid
 *.seed
 *.pid.lock
+_watchtower_legacy/
 
 # Ignore IDE/editor files
 .vscode/
