@@ -43,17 +43,6 @@
         description: "Photo & Video Server"
         server: docker
         container: immich-server
-    - Nextcloud:
-        icon: si-nextcloud-#0082C9
-        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
-        widget:
-            type: nextcloud
-            url: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
-            key: "{{HOMEPAGE_VAR_NEXTCLOUD_WIDGET_KEY}}"
-            fields: ["activeusers", "numfiles", "numshares"]
-        description: "Photo & Video Server"
-        server: docker
-        container: nextcloud
     - Sonarr:
         icon: si-sonarr-#2596BE
         href: "{{HOMEPAGE_VAR_SONARR_URL}}"
@@ -74,6 +63,16 @@
         description: "Movie Automation"
         server: docker
         container: radarr
+    - Tdarr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/tdarr.webp
+        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
+        widget:
+            type: tdarr
+            url: "{{HOMEPAGE_VAR_TDARR_URL}}"
+            key: "{{HOMEPAGE_VAR_TDARR_WIDGET_KEY}}"
+        description: "Media Transcoding"
+        server: docker
+        container: tdarr
     - qBittorrent:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
         href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
@@ -96,6 +95,7 @@
         description: "Torrent Indexer"
         server: docker
         container: jackett
+
 
 - Infrastructure:
     - CPU Usage:
