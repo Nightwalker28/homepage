@@ -2,10 +2,11 @@
     - Calendar:
         widget:
             type: calendar
-            view: monthly
+            view: agenda
             maxEvents: 10
             showTime: true
             timezone: "{{HOMEPAGE_VAR_TIMEZONE}}"
+            previousDays: 1
             integrations:
               - type: ical
                 url: "{{HOMEPAGE_VAR_ICAL_URL}}"
@@ -13,6 +14,11 @@
                 color:
                 params:
                     showName: false
+    - Tasks:
+        widget:
+            type: iframe
+            name: Tasks
+            src: "{{HOMEPAGE_VAR_BLINKO_URL}}/?path=todo"
 
 - Media:
     - Jellyfin:
@@ -63,6 +69,16 @@
         description: "Movie Automation"
         server: docker
         container: radarr
+    - Bazarr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bazarr.webp
+        href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+        widget:
+            type: bazarr
+            url: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+            key: "{{HOMEPAGE_VAR_BAZARR_WIDGET_KEY}}"
+        description: "Subtitle Management"
+        server: docker
+        container: bazarr
     - Tdarr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/tdarr.webp
         href: "{{HOMEPAGE_VAR_TDARR_URL}}"

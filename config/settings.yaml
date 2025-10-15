@@ -12,6 +12,7 @@ iconStyle: theme
 statusStyle: dot
 quicklaunch:
   searchDescriptions: true
+  mobileButtonPosition: top-right
 hideVersion: true
 hideErrors: true
 fiveColumns: true
