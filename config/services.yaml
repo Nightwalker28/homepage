@@ -49,6 +49,16 @@
         description: "Photo & Video Server"
         server: docker
         container: immich-server
+    - Jellyseerr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyseerr.webp
+        href: "{{HOMEPAGE_VAR_JELLYSEERR_URL}}"
+        widget:
+            type: jellyseerr
+            url: "{{HOMEPAGE_VAR_JELLYSEERR_URL}}"
+            key: "{{HOMEPAGE_VAR_JELLYSEERR_WIDGET_KEY}}"
+        description: "Media Requests"
+        server: docker
+        container: jellyseerr
     - Sonarr:
         icon: si-sonarr-#2596BE
         href: "{{HOMEPAGE_VAR_SONARR_URL}}"
@@ -101,16 +111,16 @@
         description: "Torrent Client"
         server: docker
         container: qbittorrent
-    - Jackett:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jackett-light.webp
-        href: "{{HOMEPAGE_VAR_JACKETT_URL}}"
+    - Prowlarr:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/prowlarr.webp
+        href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
         widget:
-            type: jackett
-            url: "{{HOMEPAGE_VAR_JACKETT_URL}}"
-            password: "{{HOMEPAGE_VAR_JACKETT_PASSWORD}}"
-        description: "Torrent Indexer"
+            type: prowlarr
+            url: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
+            key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
+        description: "Indexer Management"
         server: docker
-        container: jackett
+        container: prowlarr
 
 
 - Infrastructure:
@@ -204,6 +214,12 @@
         description: "Simple Reverse Proxy Manager"
         server: docker
         container: npm
+    - Vaultwarden:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bitwarden.webp
+        href: "{{HOMEPAGE_VAR_VAULTWARDEN_URL}}"
+        description: "Self-hosted Password Manager"
+        server: docker
+        container: vaultwarden
     - Postgres:
         icon: si-postgresql-#336791
         description: "Database Server"
