@@ -1,3 +1,17 @@
+- Home:
+    - Seafile:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/seafile.webp
+        href: "{{HOMEPAGE_VAR_SEAFILE_URL}}"
+        description: "File Sync & Share"
+        server: docker
+        container: seafile
+    - Siyuan:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/siyuan.webp
+        href: "{{HOMEPAGE_VAR_SIYUAN_URL}}"
+        description: "Personal Knowledge Base"
+        server: docker
+        container: siyuan
+
 - Media:
     - Jellyfin:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
@@ -100,7 +114,6 @@
         server: docker
         container: prowlarr
 
-
 - Infrastructure:
     - CPU Usage:
         href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
@@ -198,16 +211,25 @@
         description: "Self-hosted Password Manager"
         server: docker
         container: vaultwarden
+        showStats: true
+    - OnlyOffice:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/onlyoffice.webp
+        description: "Document Server"
+        server: docker
+        container: onlyoffice
+        showStats: true
     - Postgres:
         icon: si-postgresql-#336791
         description: "Database Server"
         server: docker
         container: postgres
+        showStats: true
     - Redis:
         icon: si-redis-#DC382D
         description: "In-memory Data Structure Store"
         server: docker
         container: redis
+        showStats: true
 
 #------------------------------------------------------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------------------------#

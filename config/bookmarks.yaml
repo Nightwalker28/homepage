@@ -19,9 +19,6 @@
   - Personal gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_PERSONAL_GMAIL_URL}}"
-  - Blinko:
-     - icon: /icons/blinko.png
-       href: "{{HOMEPAGE_VAR_BLINKO_URL}}"
 
 - Entertainment:
   - Valorant:

@@ -11,8 +11,15 @@ services:
       - ./config/icons:/app/public/icons
     environment:
       HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
+      PUID: ${HOMEPAGE_PUID:-1000}
+      PGID: ${HOMEPAGE_PGID:-1000}
+      UMASK: ${HOMEPAGE_UMASK:-022}
     env_file:
       - ./config/.env
+    user: "${HOMEPAGE_PUID:-1000}:${HOMEPAGE_PGID:-1000}"
+    group_add:
+      # Allow non-root user to access docker.sock for widget stats
+      - "120"
     networks:
       - shared_net
     restart: unless-stopped
