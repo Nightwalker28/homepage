@@ -123,7 +123,6 @@
             url: "{{HOMEPAGE_VAR_PROXMOX_API_URL}}"
             username: "{{HOMEPAGE_VAR_PROXMOX_USERNAME}}"
             password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
-            node: "{{HOMEPAGE_VAR_PROXMOX_NODE}}"
             fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
         description: "Proxmox Cluster Overview"
     - Network:
@@ -159,6 +158,55 @@
         description: "Simple Reverse Proxy Manager"
         server: docker
         container: npm
+    - Dockhand:
+        icon: si-docker-#2496ED
+        href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
+        widget:
+          type: customapi
+          url: "{{HOMEPAGE_VAR_DOCKHAND_STATS_URL}}"
+          refreshInterval: 15000
+          display: block
+          mappings:
+            - field: 0.containers.total
+              label: Containers
+              format: number
+            - field: 0.containers.running
+              label: Running
+              format: number
+            - field: 0.containers.stopped
+              label: Stopped
+              format: number
+            - field: 0.containers.unhealthy
+              label: Unhealthy
+              format: number
+        description: "Container manager stats"
+        server: docker
+        container: dockhand
+    - Dockhand Updates:
+        icon: si-docker-#2496ED
+        href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
+        widget:
+          type: customapi
+          url: "{{HOMEPAGE_VAR_DOCKHAND_API_URL}}"
+          refreshInterval: 15000
+          display: block
+          mappings:
+            # schedules[0] is latest env update run
+            - field: schedules.0.lastExecution.details.updatesFound
+              label: Updates found
+              format: number
+            - field: schedules.0.lastExecution.details.errors
+              label: Errors
+              format: number
+            # recentExecutions[0] often has summary (updated/blocked/failed)
+            - field: schedules.0.recentExecutions.0.details.summary.updated
+              label: Updated
+              format: text
+            - field: schedules.0.recentExecutions.0.details.summary.failed
+              label: Failed
+              format: text
+        server: docker
+        container: dockhand
     - Vaultwarden:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bitwarden.webp
         href: "{{HOMEPAGE_VAR_VAULTWARDEN_URL}}"
