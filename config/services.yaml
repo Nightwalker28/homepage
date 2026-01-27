@@ -115,30 +115,17 @@
         container: prowlarr
 
 - Infrastructure:
-    - CPU Usage:
-        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
+    - Proxmox:
+        icon: si-proxmox-#E57000
+        href: "{{HOMEPAGE_VAR_PROXMOX_HREF}}"
         widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
-            version: 4
-            metric: cpu
-            refreshInterval: 5000
-            pointsLimit: 30
-        description: "System Monitor"
-        server: docker
-        container: glances
-    - RAM Usage:
-        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
-            version: 4
-            metric: memory
-            refreshInterval: 5000
-            pointsLimit: 30
-        description: "System Monitor"
-        server: docker
-        container: glances
+            type: proxmox
+            url: "{{HOMEPAGE_VAR_PROXMOX_API_URL}}"
+            username: "{{HOMEPAGE_VAR_PROXMOX_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
+            node: "{{HOMEPAGE_VAR_PROXMOX_NODE}}"
+            fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
+        description: "Proxmox Cluster Overview"
     - Network:
         href: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
         widget:
@@ -150,39 +137,6 @@
         description: "Internet Speed Test"
         server: docker
         container: speedtest
-    - Disk Usage:
-        href: "{{HOMEPAGE_VAR_GLANCES_URL}}"
-        widget:
-            type: glances
-            url: "{{HOMEPAGE_VAR_GLANCES_URL}}"
-            version: 4
-            metric: disk:sda
-            refreshInterval: 5000
-            pointsLimit: 30
-        description: "System Monitor"
-        server: docker
-        container: glances
-    - Portainer:
-        icon: si-portainer-#13BEF9
-        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
-        widget:
-          type: portainer
-          url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
-          env: 3
-          key: "{{HOMEPAGE_VAR_PORTAINER_WIDGET_KEY}}"
-          fields: ["running", "stopped", "total"]
-        description: "Docker Management made Simple"
-        server: docker
-        container: portainer 
-    - Watchtower:
-        icon: si-watchtower-#3CA4FF
-        widget:
-            type: watchtower
-            url: "{{HOMEPAGE_VAR_WATCHTOWER_URL}}"
-            key: "{{HOMEPAGE_VAR_WATCHTOWER_WIDGET_KEY}}"
-        description: "Automated Docker Container Updates"
-        server: docker
-        container: watchtower
     - AdGuard:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
         href: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
