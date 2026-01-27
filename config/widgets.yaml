@@ -11,6 +11,11 @@
       - /
 
 - resources:
+    label: Appdata
+    disk:
+      - /home
+
+- resources:
     label: Media
     disk:
       - /mnt/media

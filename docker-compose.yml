@@ -7,6 +7,7 @@ services:
     volumes:
       - ./config:/app/config
       - /mnt/media:/mnt/media:ro
+      - /home:/home:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./config/icons:/app/public/icons
     environment:
@@ -16,10 +17,13 @@ services:
       UMASK: ${HOMEPAGE_UMASK:-022}
     env_file:
       - ./config/.env
+    extra_hosts:
+      # Resolve "nas" inside the container to the Tailscale IP (services bound there)
+      - "nas:100.107.171.33"
     user: "${HOMEPAGE_PUID:-1000}:${HOMEPAGE_PGID:-1000}"
     group_add:
       # Allow non-root user to access docker.sock for widget stats
-      - "120"
+      - "989"
     networks:
       - shared_net
     restart: unless-stopped
