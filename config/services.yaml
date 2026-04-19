@@ -41,16 +41,16 @@
         description: "Photo & Video Server"
         server: docker
         container: immich-server
-    - Jellyseerr:
+    - Seerr:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyseerr.webp
-        href: "{{HOMEPAGE_VAR_JELLYSEERR_URL}}"
+        href: "{{HOMEPAGE_VAR_SEERR_URL}}"
         widget:
-            type: jellyseerr
-            url: "{{HOMEPAGE_VAR_JELLYSEERR_URL}}"
-            key: "{{HOMEPAGE_VAR_JELLYSEERR_WIDGET_KEY}}"
+            type: seerr
+            url: "{{HOMEPAGE_VAR_SEERR_URL}}"
+            key: "{{HOMEPAGE_VAR_SEERR_WIDGET_KEY}}"
         description: "Media Requests"
         server: docker
-        container: jellyseerr
+        container: seerr
     - Sonarr:
         icon: si-sonarr-#2596BE
         href: "{{HOMEPAGE_VAR_SONARR_URL}}"
@@ -147,6 +147,27 @@
         description: "Network-wide Ad-blocker"
         server: docker
         container: adguard
+    - Authentik:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/authentik.webp
+        href: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
+        widget:
+          type: authentik
+          url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
+          key: "{{HOMEPAGE_VAR_AUTHENTIK_key}}"
+          version: 2
+        description: "Identity Provider"
+        server: docker
+        container: authentik-server
+    - Home Assistant:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/home-assistant.webp
+        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+        widget:
+          type: homeassistant
+          url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+          key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_WIDGET_KEY}}"
+        description: "Home Automation"
+        server: docker
+        container: homeassistant
     - Nginx Proxy Manager:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
         href: "{{HOMEPAGE_VAR_NPM_URL}}"
@@ -240,38 +261,6 @@
 
 - Bookmarks:
   # 🧑‍💻 Work & Company
-  - Acumen — WordPress:
-      id: service-bookmark
-      icon: si-wordpress-#21759B
-      href: "{{HOMEPAGE_VAR_BOOKMARK_ACUMEN_WORDPRESS_URL}}"
-  - Acumen Content Hub — WordPress:
-      id: service-bookmark
-      icon: si-wordpress-#21759B
-      href: "{{HOMEPAGE_VAR_BOOKMARK_ACUMEN_CONTENT_WORDPRESS_URL}}"
-  - CRM ARM:
-      id: service-bookmark
-      icon: 
-      href: "{{HOMEPAGE_VAR_BOOKMARK_CRM_ARM_URL}}"
-  - amatech — WordPress:
-      id: service-bookmark
-      icon: si-wordpress-#21759B
-      href: "{{HOMEPAGE_VAR_BOOKMARK_AMATECH_WORDPRESS_URL}}"
-  - Techmeedigital — WordPress:
-      id: service-bookmark
-      icon: si-wordpress-#21759B
-      href: "{{HOMEPAGE_VAR_BOOKMARK_TECHMEEDIGITAL_WORDPRESS_URL}}"
-  - block app:
-      id: service-bookmark
-      icon: /icons/block-app.webp
-      href: "{{HOMEPAGE_VAR_BOOKMARK_BLOCK_APP_URL}}"
-  - HostGator:
-      id: service-bookmark
-      icon: /icons/hostgator.webp
-      href: "{{HOMEPAGE_VAR_BOOKMARK_HOSTGATOR_URL}}"
-  - spamhous:
-      id: service-bookmark
-      icon: /icons/spamhaus.webp
-      href: "{{HOMEPAGE_VAR_BOOKMARK_SPAMHAUS_URL}}"
   - SEZ:
       id: service-bookmark
       icon: /icons/shabab.webp
@@ -308,32 +297,10 @@
       href: "{{HOMEPAGE_VAR_BOOKMARK_QUILLBOT_URL}}"
 
   # 📊 Documents & Sheets
-  - Research Project Gantt:
-      id: service-bookmark
-      icon: si-googlesheets-#34A853
-      href: "{{HOMEPAGE_VAR_BOOKMARK_RESEARCH_GANTT_URL}}"
-  - Office IPs — Google Sheets:
-      id: service-bookmark
-      icon: si-googlesheets-#34A853
-      href: "{{HOMEPAGE_VAR_BOOKMARK_OFFICE_IPS_URL}}"
-  - Monthly Budget:
-      id: service-bookmark
-      icon: si-googlesheets-#34A853
-      href: "{{HOMEPAGE_VAR_BOOKMARK_MONTHLY_BUDGET_URL}}"
   - Home Network — Google Sheets:
       id: service-bookmark
       icon: si-googlesheets-#34A853
       href: "{{HOMEPAGE_VAR_BOOKMARK_HOME_NETWORK_URL}}"
-
-  # ✅ Tasks & Productivity
-  - Google Tasks (Personal):
-      id: service-bookmark
-      icon: si-googletasks-#4285F4
-      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_TASKS_PERSONAL_URL}}"
-  - Google Tasks (Work):
-      id: service-bookmark
-      icon: si-googletasks-#4285F4
-      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_TASKS_WORK_URL}}"
 
   # 💰 Banking
   - HNB Online Banking:
@@ -364,7 +331,7 @@
       id: service-bookmark
       icon: si-tvtime-#FFD400
       href: "{{HOMEPAGE_VAR_BOOKMARK_TV_TIME_URL}}"
-  - YouTube:
+  - YT:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/youtube.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_YOUTUBE_URL}}"

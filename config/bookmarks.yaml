@@ -11,9 +11,9 @@
   - Cloudflare:
      - icon: si-cloudflare-#F38020
        href: "{{HOMEPAGE_VAR_BOOKMARK_CLOUDFLARE_URL}}"
-  - GoDaddy:
-     - icon: si-godaddy-#1BDBDB
-       href: "{{HOMEPAGE_VAR_BOOKMARK_GODADDY_URL}}"
+  - Cluade:
+      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/claude.webp
+        href: "{{HOMEPAGE_VAR_BOOKMARK_WORK_CLAUDE_URL}}"
 
 - Personal:
   - Personal gmail:
@@ -24,13 +24,6 @@
   - Valorant:
      - icon: si-valorant-#FF4654
        href: "{{HOMEPAGE_VAR_BOOKMARK_VALORANT_URL}}"
-  - AnimePahe:
-     - icon: /icons/animepahe.webp
-       href: "{{HOMEPAGE_VAR_BOOKMARK_ANIMEPAHE_URL}}"
-       id: animepahe
-  - TodayTv:
-     - icon: /icons/todaytv.webp
-       href: "{{HOMEPAGE_VAR_BOOKMARK_TODAYTV_URL}}"
   - 1337x:
      - icon: /icons/1337x.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_1337X_URL}}"
