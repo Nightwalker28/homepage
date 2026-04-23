@@ -1,10 +1,11 @@
 - logo:
-    icon: /icons/profile.webp
+    id: logo
+    icon: /icons/hlogo.svg
 
-- greeting:
-    text_size: xl
-    text: {{HOMEPAGE_VAR_GREETING_TEXT}}
-
+# - greeting:
+#     text_size: xl
+#     text: {{HOMEPAGE_VAR_GREETING_TEXT}}
+- resources:
 - resources:
     label: System
     disk:

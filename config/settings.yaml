@@ -1,9 +1,9 @@
-title: Nightwalker's Homepage
-favicon: /icons/profile.webp
+title: WALKER HUB
+favicon: /icons/fav.svg
 disableCollapse: false
 background:
-  image: /icons/wallpaper.webp
-  blur: sm
+  image: /icons/background.jpg
+  blur: xs
   brightness: 51
 cardBlur: 4xl
 theme: dark

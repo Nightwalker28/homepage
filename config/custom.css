@@ -1,8 +1,8 @@
 :root {
 --card-bg: rgba(15, 23, 42, 0.9); /* deep navy */
---card-border: 2px solid #1e3a8a; /* dark blue border */
---card-border-hover: #2563eb; /* bright blue hover */
---card-border-focus: #3b82f6; /* lighter focus blue */
+--card-border: 2px solid rgb(31, 128, 207); /* dark blue border */
+--card-border-hover: #67e8f9; /* bright blue hover */
+--card-border-focus: #67e8f9; /* lighter focus blue */
 --font-family-base: "Inter", "SF Pro Display", sans-serif;
 --base-font-size: 14px;
 --text-color: #f1f5f9; /* soft white */
@@ -18,50 +18,80 @@ font-family: var(--font-family-base);
 font-size: var(--base-font-size);
 }
 
+
 /* Hide the search bar */
 .information-widget-search {
   display: none !important;
 }
 
-/* Resize the logo */
-.information-widget-logo {
-  width: 42px;
-  height: 42px;
-}
 
-/* Center the widgets header */
 #information-widgets {
-  margin-bottom: -10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
 }
+
 
 #information-widgets-right {
   margin-right: 10px;
 }
 
+
 .information-widget-greeting {
-  flex-grow: 1;
+  flex-grow: 1.5;
 }
 
-.container {
-  max-width: 90%;
-}
 
 .information-widget-resources {
   position: relative;
 }
 
+
 .information-widget-resource {
-  text-align: center;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+} 
+
+
+/* #information-widgets > * {
+
+} */
+
+
+#information-widgets > *::before {
+  display: none;
 }
+
+
+#information-widgets > *:is(:hover, :focus) {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+
+/* Resize the logo */
+/* Target your homepage logo exactly */
+.information-widget-logo img {
+    width: 240px !important;
+    height: auto !important;
+    
+} 
+
+
+.container {
+  max-width: 90%;
+}
+
 
 .service-card {
 background: var(--card-bg);

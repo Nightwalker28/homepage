@@ -9,7 +9,7 @@
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github-light.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_GITHUB_URL}}"
   - Cloudflare:
-     - icon: si-cloudflare-#F38020
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/cloudflare.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_CLOUDFLARE_URL}}"
   - Cluade:
       - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/claude.webp

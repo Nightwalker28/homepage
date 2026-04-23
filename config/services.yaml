@@ -11,6 +11,12 @@
         description: "Personal Knowledge Base"
         server: docker
         container: siyuan
+    - Actual Budget:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/actual-budget.webp
+        href: "{{HOMEPAGE_VAR_ACTUAL_BUDGET_URL}}"
+        description: "Personal Finance Manager"
+        server: docker
+        container: actual-budget
 
 - Media:
     - Jellyfin:
@@ -52,7 +58,7 @@
         server: docker
         container: seerr
     - Sonarr:
-        icon: si-sonarr-#2596BE
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/sonarr.webp
         href: "{{HOMEPAGE_VAR_SONARR_URL}}"
         widget:
             type: sonarr
@@ -116,7 +122,7 @@
 
 - Infrastructure:
     - Proxmox:
-        icon: si-proxmox-#E57000
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/proxmox.webp
         href: "{{HOMEPAGE_VAR_PROXMOX_HREF}}"
         widget:
             type: proxmox
@@ -204,7 +210,7 @@
         server: docker
         container: dockhand
     - Dockhand Updates:
-        icon: si-docker-#2496ED
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/dockhand.webp
         href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
         widget:
           type: customapi
