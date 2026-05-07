@@ -5,9 +5,15 @@
   - Work gmail:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_WORK_GMAIL_URL}}"
+  - Google Calendar:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/google-calendar.webp
+       href: "{{HOMEPAGE_VAR_BOOKMARK_WORK_GOOGLE_CALENDAR_URL}}"
   - GitHub:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github-light.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_GITHUB_URL}}"
+  - AWS:
+     - icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/amazon-web-services-light.webp
+       href: "{{HOMEPAGE_VAR_BOOKMARK_AWS_URL}}"
   - Cloudflare:
      - icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/cloudflare.webp
        href: "{{HOMEPAGE_VAR_BOOKMARK_CLOUDFLARE_URL}}"

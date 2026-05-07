@@ -267,6 +267,14 @@
 
 - Bookmarks:
   # 🧑‍💻 Work & Company
+  - Zoho People:
+      id: service-bookmark
+      icon: /icons/zoho_ppl.svg
+      href: "{{HOMEPAGE_VAR_BOOKMARK_ZOHO_PEOPLE_URL}}"
+  - Google Sheets:
+      id: service-bookmark
+      icon: si-googlesheets-#34A853
+      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_SHEETS_URL}}"
   - SEZ:
       id: service-bookmark
       icon: /icons/shabab.webp
@@ -285,25 +293,13 @@
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/gmail.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_IIT_GMAIL_URL}}"
-  - Seylan IIT Payment:
-      id: service-bookmark
-      icon: /icons/saylan.webp
-      href: "{{HOMEPAGE_VAR_BOOKMARK_SEYLAN_PAYMENT_URL}}"
   - Student Hub — Westminster:
       id: service-bookmark
       icon: /icons/westminster.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_STUDENT_HUB_URL}}"
-  - Google Scholar:
-      id: service-bookmark
-      icon: si-googlescholar-#4285F4
-      href: "{{HOMEPAGE_VAR_BOOKMARK_GOOGLE_SCHOLAR_URL}}"
-  - QuillBot AI:
-      id: service-bookmark
-      icon: /icons/quillbot.webp
-      href: "{{HOMEPAGE_VAR_BOOKMARK_QUILLBOT_URL}}"
 
   # 📊 Documents & Sheets
-  - Home Network — Google Sheets:
+  - Home Network:
       id: service-bookmark
       icon: si-googlesheets-#34A853
       href: "{{HOMEPAGE_VAR_BOOKMARK_HOME_NETWORK_URL}}"
