@@ -42,3 +42,5 @@ _watchtower_legacy/
 .idea/
 *.swp
 config/custom/js/
+
+config/proxmox.yaml
