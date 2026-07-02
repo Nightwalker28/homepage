@@ -41,3 +41,4 @@ _watchtower_legacy/
 .vscode/
 .idea/
 *.swp
+config/custom/js/

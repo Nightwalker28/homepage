@@ -1,3 +1,57 @@
+@import url("/custom/css/jellyfin.widget.css");
+@import url("/custom/css/jellyfin.slider.widget.css");
+@import url("/custom/css/immich.widget.css");
+@import url("/custom/css/seerr.widget.css");
+@import url("/custom/css/sonarr.widget.css");
+@import url("/custom/css/radarr.widget.css");
+@import url("/custom/css/prowlarr.widget.css");
+@import url("/custom/css/qbit.widget.css");
+@import url("/custom/css/bazarr.widget.css");
+@import url("/custom/css/tdarr.widget.css");
+@import url("/custom/css/tdarr.offline.state.css");
+@import url("/custom/css/calendar.widget.css");
+@import url("/custom/css/adguard.widget.css");
+@import url("/custom/css/speedtest.widget.css");
+@import url("/custom/css/proxmox.widget.css");
+
+/* Keep injected widgets inside Homepage's native service-card grid. */
+.custom-widget-slot {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.custom-widget-slot > div {
+  width: 100%;
+  min-width: 0;
+}
+
+.custom-widget-slot > :not([data-custom-widget-host]) {
+  display: none !important;
+}
+
+/* Match injected widgets to the regular dashboard cards. */
+body .custom-widget-slot > [data-custom-widget-host] {
+  height: 100%;
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  box-sizing: border-box;
+  border: var(--card-border) !important;
+  border-radius: var(--border-radius) !important;
+  background: var(--card-bg) !important;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.15) !important;
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+body .custom-widget-slot > [data-custom-widget-host]:hover {
+  transform: none !important;
+  border-color: var(--card-border-hover) !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25) !important;
+}
+
 :root {
 --card-bg: rgba(15, 23, 42, 0.9); /* deep navy */
 --card-border: 2px solid rgb(31, 128, 207); /* dark blue border */
@@ -90,8 +144,13 @@ font-size: var(--base-font-size);
 
 .container {
   max-width: 90%;
+  padding-bottom: 36px;
+  box-sizing: border-box;
 }
 
+.service-group-name {
+  display: none !important;
+}
 
 .service-card {
 background: var(--card-bg);
@@ -181,6 +240,6 @@ color: var(--accent-color);
   object-fit: contain;
 }
 
-#footer {
+#style {
   display: none;
 }

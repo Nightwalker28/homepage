@@ -5,120 +5,66 @@
         description: "File Sync & Share"
         server: docker
         container: seafile
+
     - Siyuan:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/siyuan.webp
         href: "{{HOMEPAGE_VAR_SIYUAN_URL}}"
         description: "Personal Knowledge Base"
         server: docker
         container: siyuan
+
     - Actual Budget:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/actual-budget.webp
         href: "{{HOMEPAGE_VAR_ACTUAL_BUDGET_URL}}"
         description: "Personal Finance Manager"
         server: docker
         container: actual-budget
+- Calendar:
+    - Media Calendar Anchor:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr-v1.webp
+        description: Unified media calendar (injected widget)
 
-- Media:
-    - Jellyfin:
+- MEDIA:
+
+    - Jellyfin Anchor:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
-        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
-        widget:
-            type: jellyfin
-            url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
-            key: "{{HOMEPAGE_VAR_JELLYFIN_WIDGET_KEY}}"
-            enableBlocks: true
-            fields: ["movies", "series", "episodes"]
-            enableNowPlaying: false
-            enableUser: false
-            enableMediaControl: false
-            showEpisodeNumber: true
-            expandOneStreamToTwoRows: false
-        description: "Media Server"
-        server: docker
-        container: jellyfin
-    - Immich:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/immich.webp
-        href: "{{HOMEPAGE_VAR_IMMICH_URL}}"
-        widget:
-            type: immich
-            url: "{{HOMEPAGE_VAR_IMMICH_URL}}"
-            key: "{{HOMEPAGE_VAR_IMMICH_WIDGET_KEY}}"
-            version: 2
-        description: "Photo & Video Server"
-        server: docker
-        container: immich-server
-    - Seerr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyseerr.webp
-        href: "{{HOMEPAGE_VAR_SEERR_URL}}"
-        widget:
-            type: seerr
-            url: "{{HOMEPAGE_VAR_SEERR_URL}}"
-            key: "{{HOMEPAGE_VAR_SEERR_WIDGET_KEY}}"
-        description: "Media Requests"
-        server: docker
-        container: seerr
-    - Sonarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/sonarr.webp
-        href: "{{HOMEPAGE_VAR_SONARR_URL}}"
-        widget:
-            type: sonarr
-            url: "{{HOMEPAGE_VAR_SONARR_URL}}"
-            key: "{{HOMEPAGE_VAR_SONARR_WIDGET_KEY}}"
-        description: "TV Show Automation"
-        server: docker
-        container: sonarr
-    - Radarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
-        href: "{{HOMEPAGE_VAR_RADARR_URL}}"
-        widget:
-            type: radarr
-            url: "{{HOMEPAGE_VAR_RADARR_URL}}"
-            key: "{{HOMEPAGE_VAR_RADARR_WIDGET_KEY}}"
-        description: "Movie Automation"
-        server: docker
-        container: radarr
+        description: Live sessions & library stats (injected widget)
+
+    - Jellyfin Media Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/jellyfin.webp
+        description: Jellyfin Slider (injected widget)
+
+    - Seerr Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/seerr.webp
+        description: Requests (injected widget)
+
+- ARR:
+
+    - Radarr Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/radarr.webp
+        description: Radarr dual-server widget (injected widget)
+
+    - Sonarr Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/sonarr.webp
+        description: Sonarr dual-server widget (injected widget)
+
     - Bazarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bazarr.webp
-        href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
-        widget:
-            type: bazarr
-            url: "{{HOMEPAGE_VAR_BAZARR_URL}}"
-            key: "{{HOMEPAGE_VAR_BAZARR_WIDGET_KEY}}"
-        description: "Subtitle Management"
-        server: docker
-        container: bazarr
-    - Tdarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/tdarr.webp
-        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
-        widget:
-            type: tdarr
-            url: "{{HOMEPAGE_VAR_TDARR_URL}}"
-            key: "{{HOMEPAGE_VAR_TDARR_WIDGET_KEY}}"
-        description: "Media Transcoding"
-        server: docker
-        container: tdarr
-    - qBittorrent:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent-dark.webp
-        href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
-        widget:
-            type: qbittorrent
-            url: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
-            username: "{{HOMEPAGE_VAR_QBITTORRENT_USERNAME}}"
-            password: "{{HOMEPAGE_VAR_QBITTORRENT_PASSWORD}}"
-            enableLeechProgress: true 
-        description: "Torrent Client"
-        server: docker
-        container: qbittorrent
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/bazarr.webp
+        description: Subtitle Management (injected widget)
+
     - Prowlarr:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/prowlarr.webp
-        href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
-        widget:
-            type: prowlarr
-            url: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
-            key: "{{HOMEPAGE_VAR_PROWLARR_API_KEY}}"
-        description: "Indexer Management"
-        server: docker
-        container: prowlarr
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/prowlarr.webp
+        description: Indexer Management (injected widget)
+
+- MANAGER:
+
+    - qBit Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/qbittorrent.webp
+        description: qBittorrent dual-server manager (injected widget)
+
+    - Tdarr Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/tdarr.webp
+        description: Transcode pipeline (injected widget)
 
 - Infrastructure:
     - Proxmox:
@@ -174,17 +120,6 @@
         description: "Home Automation"
         server: docker
         container: homeassistant
-    - Nginx Proxy Manager:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/nginx-proxy-manager.webp
-        href: "{{HOMEPAGE_VAR_NPM_URL}}"
-        widget:
-          type: npm
-          url: "{{HOMEPAGE_VAR_NPM_URL}}"
-          username: "{{HOMEPAGE_VAR_NPM_USERNAME}}"
-          password: "{{HOMEPAGE_VAR_NPM_PASSWORD}}"
-        description: "Simple Reverse Proxy Manager"
-        server: docker
-        container: npm
     - Dockhand:
         icon: si-docker-#2496ED
         href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
@@ -259,6 +194,24 @@
         server: docker
         container: redis
         showStats: true
+
+- ADGUARD - CONTROL:
+
+    - AdGuard Control Panel:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/adguard-home.webp
+        description: AdGuard control panel (injected widget)
+
+- PVE-NODE:
+
+    - Proxmox Monitor Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/proxmox.webp
+        description: Proxmox node monitor (injected widget)
+
+- SPEEDTEST-MONITOR:
+
+    - Speedtest Monitor Anchor:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/speedtest-tracker.webp
+        description: Speedtest Tracker monitor (injected widget)
 
 #------------------------------------------------------------------------------------------------------------------------------#
 #------------------------------------------------------------------------------------------------------------------------------#
