@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+coverage
+# Exclude local secrets and runtime files.
+.git
+.env
+.env.*
+*.env
+*.bak*
+node_modules
+__pycache__
+*.log
+uploads

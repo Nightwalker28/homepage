@@ -2,224 +2,445 @@
     - Seafile:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/seafile.webp
         href: "{{HOMEPAGE_VAR_SEAFILE_URL}}"
-        description: "File Sync & Share"
+        description: File Sync & Share
         server: docker
         container: seafile
-
     - Siyuan:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/siyuan.webp
         href: "{{HOMEPAGE_VAR_SIYUAN_URL}}"
-        description: "Personal Knowledge Base"
+        description: Personal Knowledge Base
         server: docker
         container: siyuan
-
     - Actual Budget:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/actual-budget.webp
         href: "{{HOMEPAGE_VAR_ACTUAL_BUDGET_URL}}"
-        description: "Personal Finance Manager"
+        description: Personal Finance Manager
         server: docker
         container: actual-budget
+
 - Calendar:
-    - Media Calendar Anchor:
+    - Media Calendar:
+        id: widget-calendar
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr-v1.webp
-        description: Unified media calendar (injected widget)
+        href: "{{HOMEPAGE_VAR_CALENDAR_URL}}"
+        description: Sonarr and Radarr release calendar
+        siteMonitor: http://widget-gateway:3001/internal/v1/widgets/calendar/health
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/calendar/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.today
+              label: Today
+              format: number
+            - field: data.movies
+              label: Movies
+              format: number
+            - field: data.episodes
+              label: Episodes
+              format: number
+            - field: data.upcoming
+              label: Upcoming
+              format: number
 
 - MEDIA:
-
-    - Jellyfin Anchor:
+    - Jellyfin:
+        id: widget-jellyfin
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/jellyfin.webp
-        description: Live sessions & library stats (injected widget)
-
-    - Jellyfin Media Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/jellyfin.webp
-        description: Jellyfin Slider (injected widget)
-
-    - Seerr Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/seerr.webp
-        description: Requests (injected widget)
+        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+        description: Streaming sessions and libraries
+        server: docker
+        container: jellyfin
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/jellyfin/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.sessions
+              label: Sessions
+              format: number
+            - field: data.movies
+              label: Movies
+              format: number
+            - field: data.series
+              label: Series
+              format: number
+            - field: data.episodes
+              label: Episodes
+              format: number
+    - Immich:
+        id: widget-immich
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/immich.webp
+        href: "{{HOMEPAGE_VAR_IMMICH_URL}}"
+        description: Photo and video statistics
+        server: docker
+        container: immich-server
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/immich/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.users
+              label: Users
+              format: number
+            - field: data.storage
+              label: Storage
+              format: bytes
+            - field: data.photos
+              label: Photos
+              format: number
+            - field: data.videos
+              label: Videos
+              format: number
+    - Seerr:
+        id: widget-seerr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/seerr.webp
+        href: "{{HOMEPAGE_VAR_SEERR_URL}}"
+        description: Media requests
+        server: docker
+        container: seerr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/seerr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.pending
+              label: Pending
+              format: number
+            - field: data.approved
+              label: Approved
+              format: number
+            - field: data.available
+              label: Available
+              format: number
+            - field: data.total
+              label: Total
+              format: number
 
 - ARR:
-
-    - Radarr Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/radarr.webp
-        description: Radarr dual-server widget (injected widget)
-
-    - Sonarr Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/sonarr.webp
-        description: Sonarr dual-server widget (injected widget)
-
+    - Radarr:
+        id: widget-radarr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/radarr.webp
+        href: "{{HOMEPAGE_VAR_RADARR_URL}}"
+        description: Movie library
+        server: docker
+        container: radarr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/radarr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.library
+              label: Movies
+              format: number
+            - field: data.monitored
+              label: Monitored
+              format: number
+            - field: data.missing
+              label: Missing
+              format: number
+            - field: data.queued
+              label: Queued
+              format: number
+    - Sonarr:
+        id: widget-sonarr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/sonarr.webp
+        href: "{{HOMEPAGE_VAR_SONARR_URL}}"
+        description: Series library
+        server: docker
+        container: sonarr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/sonarr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.library
+              label: Series
+              format: number
+            - field: data.monitored
+              label: Monitored
+              format: number
+            - field: data.missing
+              label: Missing
+              format: number
+            - field: data.queued
+              label: Queued
+              format: number
     - Bazarr:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/bazarr.webp
-        description: Subtitle Management (injected widget)
-
+        id: widget-bazarr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bazarr.webp
+        href: "{{HOMEPAGE_VAR_BAZARR_URL}}"
+        description: Subtitle management
+        server: docker
+        container: bazarr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/bazarr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.movies
+              label: Movies
+              format: number
+            - field: data.series
+              label: Series
+              format: number
+            - field: data.wanted
+              label: Wanted
+              format: number
+            - field: data.history
+              label: History
+              format: number
     - Prowlarr:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/prowlarr.webp
-        description: Indexer Management (injected widget)
-
-- MANAGER:
-
-    - qBit Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/qbittorrent.webp
-        description: qBittorrent dual-server manager (injected widget)
-
-    - Tdarr Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/tdarr.webp
-        description: Transcode pipeline (injected widget)
+        id: widget-prowlarr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/prowlarr.webp
+        href: "{{HOMEPAGE_VAR_PROWLARR_URL}}"
+        description: Indexer management
+        server: docker
+        container: prowlarr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/prowlarr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.indexers
+              label: Indexers
+              format: number
+            - field: data.enabled
+              label: Enabled
+              format: number
+            - field: data.queries
+              label: Queries
+              format: number
+            - field: data.grabs
+              label: Grabs
+              format: number
+    - qBittorrent:
+        id: widget-qbittorrent
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/qbittorrent.webp
+        href: "{{HOMEPAGE_VAR_QBITTORRENT_URL}}"
+        description: Torrent manager
+        server: docker
+        container: qbittorrent
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/qbittorrent/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.download
+              label: Download
+              format: bytes
+              suffix: /s
+            - field: data.upload
+              label: Upload
+              format: bytes
+              suffix: /s
+            - field: data.active
+              label: Active
+              format: number
+            - field: data.free
+              label: Free
+              format: bytes
+    - Tdarr:
+        id: widget-tdarr
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/tdarr.webp
+        href: "{{HOMEPAGE_VAR_TDARR_URL}}"
+        description: Transcode pipeline
+        server: docker
+        container: tdarr
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/tdarr/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.files
+              label: Files
+              format: number
+            - field: data.transcoded
+              label: Transcoded
+              format: number
+            - field: data.queued
+              label: Queued
+              format: number
+            - field: data.errors
+              label: Errors
+              format: number
 
 - Infrastructure:
     - Proxmox:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/proxmox.webp
+        id: widget-proxmox
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/proxmox.webp
         href: "{{HOMEPAGE_VAR_PROXMOX_HREF}}"
+        description: Node, guest, storage, and update status
+        siteMonitor: http://widget-gateway:3001/internal/v1/widgets/proxmox/health
         widget:
-            type: proxmox
-            url: "{{HOMEPAGE_VAR_PROXMOX_API_URL}}"
-            username: "{{HOMEPAGE_VAR_PROXMOX_USERNAME}}"
-            password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
-            fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
-        description: "Proxmox Cluster Overview"
-    - Network:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/proxmox/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.cpu
+              label: CPU
+              format: float
+              suffix: "%"
+            - field: data.memory
+              label: Memory
+              format: bytes
+            - field: data.storage
+              label: Storage
+              format: bytes
+            - field: data.guests
+              label: Guests
+              format: number
+    - Speedtest Tracker:
+        id: widget-speedtest
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/speedtest-tracker.webp
         href: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
-        widget:
-            type: speedtest
-            url: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
-            version: 2
-            key: "{{HOMEPAGE_VAR_SPEEDTEST_WIDGET_KEY}}"
-            bitratePrecision: 3
-        description: "Internet Speed Test"
+        description: Internet speed history
         server: docker
         container: speedtest
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/speedtest/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.download
+              label: Download
+              format: float
+            - field: data.upload
+              label: Upload
+              format: float
+            - field: data.ping
+              label: Ping
+              format: float
+              suffix: ms
+            - field: data.jitter
+              label: Jitter
+              format: float
+              suffix: ms
     - AdGuard:
+        id: widget-adguard
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/adguard-home.webp
         href: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
-        widget:
-          type: adguard
-          url: "{{HOMEPAGE_VAR_ADGUARD_URL}}"
-          username: "{{HOMEPAGE_VAR_ADGUARD_USERNAME}}"
-          password: "{{HOMEPAGE_VAR_ADGUARD_PASSWORD}}"
-        description: "Network-wide Ad-blocker"
+        description: Network-wide ad blocking
         server: docker
         container: adguard
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/adguard/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.queries
+              label: Queries
+              format: number
+            - field: data.blocked
+              label: Blocked
+              format: number
+            - field: data.blockedPct
+              label: Blocked
+              format: float
+              suffix: "%"
+            - field: data.latency
+              label: Latency
+              format: float
+              suffix: s
     - Authentik:
+        id: widget-authentik
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/authentik.webp
         href: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
-        widget:
-          type: authentik
-          url: "{{HOMEPAGE_VAR_AUTHENTIK_URL}}"
-          key: "{{HOMEPAGE_VAR_AUTHENTIK_key}}"
-          version: 2
-        description: "Identity Provider"
+        description: Identity provider activity
         server: docker
         container: authentik-server
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/authentik/summary
+          refreshInterval: 60000
+          mappings:
+            - field: data.users
+              label: Users
+              format: number
+            - field: data.logins
+              label: Logins
+              format: number
+            - field: data.failed
+              label: Failed
+              format: number
+            - field: data.outposts
+              label: Outposts
+              format: number
     - Home Assistant:
+        id: widget-homeassistant
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/home-assistant.webp
         href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-        widget:
-          type: homeassistant
-          url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-          key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_WIDGET_KEY}}"
-        description: "Home Automation"
+        description: Home automation status
         server: docker
         container: homeassistant
+        widget:
+          type: customapi
+          url: http://widget-gateway:3001/internal/v1/widgets/homeassistant/summary
+          refreshInterval: 30000
+          mappings:
+            - field: data.peopleHome
+              label: Home
+              format: number
+            - field: data.lightsOn
+              label: Lights
+              format: number
+            - field: data.switchesOn
+              label: Switches
+              format: number
+            - field: data.automations
+              label: Automations
+              format: number
     - Dockhand:
+        id: widget-dockhand
         icon: si-docker-#2496ED
         href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
+        description: Container and environment health
+        server: docker
+        container: dockhand
         widget:
           type: customapi
-          url: "{{HOMEPAGE_VAR_DOCKHAND_STATS_URL}}"
+          url: http://widget-gateway:3001/internal/v1/widgets/dockhand/summary
           refreshInterval: 15000
-          display: block
           mappings:
-            - field: 0.containers.total
+            - field: data.containers
               label: Containers
               format: number
-            - field: 0.containers.running
+            - field: data.running
               label: Running
               format: number
-            - field: 0.containers.stopped
-              label: Stopped
+            - field: data.scanned
+              label: Scanned
               format: number
-            - field: 0.containers.unhealthy
-              label: Unhealthy
-              format: number
-        description: "Container manager stats"
-        server: docker
-        container: dockhand
-    - Dockhand Updates:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/webp/dockhand.webp
-        href: "{{HOMEPAGE_VAR_DOCKHAND_URL}}"
-        widget:
-          type: customapi
-          url: "{{HOMEPAGE_VAR_DOCKHAND_API_URL}}"
-          refreshInterval: 15000
-          display: block
-          mappings:
-            # schedules[0] is latest env update run
-            - field: schedules.0.lastExecution.details.updatesFound
-              label: Updates found
-              format: number
-            - field: schedules.0.lastExecution.details.errors
-              label: Errors
-              format: number
-            # recentExecutions[0] often has summary (updated/blocked/failed)
-            - field: schedules.0.recentExecutions.0.details.summary.updated
+            - field: data.updated
               label: Updated
-              format: text
-            - field: schedules.0.recentExecutions.0.details.summary.failed
-              label: Failed
-              format: text
-        server: docker
-        container: dockhand
+              format: number
     - Vaultwarden:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/bitwarden.webp
         href: "{{HOMEPAGE_VAR_VAULTWARDEN_URL}}"
-        description: "Self-hosted Password Manager"
+        description: Self-hosted Password Manager
         server: docker
         container: vaultwarden
         showStats: true
     - OnlyOffice:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons@master/webp/onlyoffice.webp
-        description: "Document Server"
+        description: Document Server
         server: docker
         container: onlyoffice
         showStats: true
     - Postgres:
         icon: si-postgresql-#336791
-        description: "Database Server"
+        description: Database Server
         server: docker
         container: postgres
         showStats: true
     - Redis:
         icon: si-redis-#DC382D
-        description: "In-memory Data Structure Store"
+        description: In-memory Data Structure Store
         server: docker
         container: redis
         showStats: true
 
-- ADGUARD - CONTROL:
-
-    - AdGuard Control Panel:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/adguard-home.webp
-        description: AdGuard control panel (injected widget)
-
-- PVE-NODE:
-
-    - Proxmox Monitor Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/proxmox.webp
-        description: Proxmox node monitor (injected widget)
-
-- SPEEDTEST-MONITOR:
-
-    - Speedtest Monitor Anchor:
-        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/speedtest-tracker.webp
-        description: Speedtest Tracker monitor (injected widget)
-
-#------------------------------------------------------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------------------------------------------------------#
-#------------------------------------------------------------------------------------------------------------------------------#
-# BOOKMARKS
-
 - Bookmarks:
-  # 🧑‍💻 Work & Company
   - Zoho People:
       id: service-bookmark
       icon: /icons/zoho_ppl.svg
@@ -232,8 +453,6 @@
       id: service-bookmark
       icon: /icons/shabab.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_SEZ_URL}}"
-
-  # 🎓 Education & University
   - Blackboard:
       id: service-bookmark
       icon: /icons/westminster.webp
@@ -250,20 +469,14 @@
       id: service-bookmark
       icon: /icons/westminster.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_STUDENT_HUB_URL}}"
-
-  # 📊 Documents & Sheets
   - Home Network:
       id: service-bookmark
       icon: si-googlesheets-#34A853
       href: "{{HOMEPAGE_VAR_BOOKMARK_HOME_NETWORK_URL}}"
-
-  # 💰 Banking
   - HNB Online Banking:
       id: service-bookmark-hnb
       icon: /icons/hnb.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_HNB_ONLINE_BANKING_URL}}"
-
-  # 🌐 Personal & Developer
   - Maad Mustafa — DEV:
       id: service-bookmark
       icon: si-devdotto
@@ -272,8 +485,6 @@
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/linkedin.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_LINKEDIN_URL}}"
-
-  # 🎮 Entertainment
   - Epic Games Store:
       id: service-bookmark
       icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/epic-games-light.webp
@@ -294,4 +505,3 @@
       id: service-bookmark
       icon: /icons/thepiratebay.webp
       href: "{{HOMEPAGE_VAR_BOOKMARK_PIRATE_BAY_URL}}"
-      

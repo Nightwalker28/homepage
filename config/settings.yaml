@@ -1,5 +1,5 @@
-title: WALKER HUB
-favicon: /icons/fav.svg
+title: WALKER DASH
+favicon: /icons/walker-dash-favicon.svg
 disableCollapse: false
 background:
   image: /icons/background.jpg
@@ -15,7 +15,7 @@ quicklaunch:
   mobileButtonPosition: top-right
 hideVersion: true
 hideErrors: true
-fiveColumns: true
+fiveColumns: false
 useEqualHeights: true
 preloadAllWidgets: true
 layout:
@@ -32,7 +32,7 @@ layout:
     header: true
     tab: Home
     style: row
-    columns: 4
+    columns: 3
   Calendar:
     header: true
     tab: Home
@@ -47,34 +47,14 @@ layout:
     header: true
     tab: Media
     style: row
-    columns: 4
-  MANAGER:
-    header: true
-    tab: Media
-    style: row
-    columns: 2
+    columns: 3
   Infrastructure:
     header: false
     tab: Infrastructure
     style: row
-    columns: 4
-  PVE-NODE:
-    header: true
-    tab: Infrastructure
-    style: row
-    columns: 1
-  SPEEDTEST-MONITOR:
-    header: true
-    tab: Infrastructure
-    style: row
-    columns: 1
-  ADGUARD - CONTROL:
-    header: true
-    tab: Infrastructure
-    style: row
-    columns: 1
+    columns: 3
   Bookmarks:
     header: false
     tab: Bookmarks
     style: row
-    columns: 4
+    columns: 3

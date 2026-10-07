@@ -2,6 +2,8 @@
 .env
 *.env
 .env.*
+!.env.example
+!**/.env.example
 
 # Ignore local overrides
 .env.local
@@ -44,3 +46,38 @@ _watchtower_legacy/
 config/custom/js/
 
 config/proxmox.yaml
+
+# Local secrets and generated files (examples may be committed).
+.env
+.env.*
+*.env
+*.env.*
+!*.env.example
+!.env.example
+!**/.env.example
+!**/*.env.example
+__pycache__/
+*.py[cod]
+node_modules/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+*.dump
+*.sql.gz
+*.bak
+*.bak-*
+*.backup
+.rollback/
+_watchtower_legacy/
+.DS_Store
+Thumbs.db
+config/logs/
+config/*.bak*
+gateway/dist/
+
+# Reviewed maintenance documentation and value-free environment templates.
+!README.md
+!MAINTENANCE.md

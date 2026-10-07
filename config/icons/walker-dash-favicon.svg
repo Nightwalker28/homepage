@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Walker server-stack E icon</title>
+  <desc id="desc">A blue and cyan three-tier server stack forming the letter E on a transparent background.</desc>
+  <defs>
+    <linearGradient id="rack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08E6F4"/>
+      <stop offset="0.48" stop-color="#00B7F0"/>
+      <stop offset="1" stop-color="#166BFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Top server -->
+  <rect x="26" y="37" width="204" height="50" rx="15" fill="url(#rack)"/>
+  <rect x="42" y="49" width="172" height="26" rx="8" fill="#07224E"/>
+  <rect x="59" y="57" width="56" height="10" rx="5" fill="#08E6F4"/>
+  <circle cx="181" cy="62" r="6" fill="#08E6F4"/>
+  <circle cx="202" cy="62" r="6" fill="#08E6F4"/>
+
+  <!-- Middle server -->
+  <rect x="26" y="103" width="204" height="50" rx="15" fill="url(#rack)"/>
+  <rect x="42" y="115" width="172" height="26" rx="8" fill="#07224E"/>
+  <rect x="59" y="123" width="56" height="10" rx="5" fill="#08E6F4"/>
+  <circle cx="181" cy="128" r="6" fill="#08E6F4"/>
+  <circle cx="202" cy="128" r="6" fill="#08E6F4"/>
+
+  <!-- Bottom server -->
+  <rect x="26" y="169" width="204" height="50" rx="15" fill="url(#rack)"/>
+  <rect x="42" y="181" width="172" height="26" rx="8" fill="#07224E"/>
+  <rect x="59" y="189" width="56" height="10" rx="5" fill="#08E6F4"/>
+</svg>
